@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+<!--    <link rel="icon" type="image/svg+xml" href="/vite.svg" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body class="bg-black">
+    <main class="container mx-auto relative">
+  <!--  nav starts here -->
+      <nav class="absolute w-full p-5 flex items-center justify-between text-white bg-gradient-to-b from-black to-[#66666600]">
+           <div id="brand-logo">
+               <img src="/logos/brand-logo.png" alt="logo"/>
+           </div>
+           <div id="menu" class="flex justify-center gap-4 pr-7">
+               <a href="#">Home</a>
+               <a href="#">Company</a>
+               <a href="#">Our Services</a>
+               <a href="#">Careers</a>
+               <a href="#">Markets We Serve</a>
+               <a href="#">Contact Us</a>
+               <a href="#">Lang</a>
+           </div>
+      </nav>
+<!-- nav ends here-->
+
+<!-- hero section start-->
+      <section class="h-[55vh] w-full relative overflow-hidden">
+        <video
+                loop
+                muted
+                autoplay
+                playsinline
+                class="z-[-1] absolute top-0"
+                poster="/images/teaser-poster.jpg"
+        >
+          <source src="/videos/teaser.webm" type="video/webm" />
+          <source src="/videos/teaser.mp4" type="video/mp4" />
+          Your browser does not support the HTML5 video tag.
+        </video>
+          <div class="absolute bottom-2 left-2 text-white">
+              <h2>Text here</h2>
+              <p>more text here</p>
+          </div>
+      </section>
+<!--hero section ends here -->
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
