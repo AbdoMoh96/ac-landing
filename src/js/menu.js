@@ -11,7 +11,11 @@ export function initNavDropdown(userOptions = {}) {
         openDelay = 25,
         closeDelay = 120,
         minWidth = 220,
-        gutter = 8,                 // Tailwind-safe clamp padding (px)
+        gutter = 8,
+        // motion tuning
+        moveDurationMs = 180,
+        sizeDurationMs = 200,
+        easing = 'cubic-bezier(0.2, 0.8, 0.2, 1)',
     } = userOptions;
 
     const nav         = root.querySelector(selectors.nav);
@@ -24,6 +28,21 @@ export function initNavDropdown(userOptions = {}) {
 
     let closeTO = null, openTO = null, activeIdx = -1;
     const onCleanup = [];
+    let animReady = false; // prevent animation on first reveal
+
+    // Ensure transform/width transitions are enabled once
+    const enablePanelTransitions = () => {
+        panel.style.transitionProperty   = 'transform,width';
+        // separate durations feels nicer: width can lag slightly behind x-move
+        panel.style.transitionDuration   = `${moveDurationMs}ms, ${sizeDurationMs}ms`;
+        panel.style.transitionTimingFunction = `${easing}, ${easing}`;
+        panel.style.willChange = 'transform,width';
+    };
+
+    // Temporarily disable transitions (for first paint / measuring)
+    const disablePanelTransitions = () => {
+        panel.style.transitionProperty = 'none';
+    };
 
     const setExpanded = (idx) => {
         allTriggers.forEach((el, i) => el.setAttribute('aria-expanded', String(i === idx)));
@@ -47,26 +66,45 @@ export function initNavDropdown(userOptions = {}) {
         else setTimeout(() => panel.classList.add('hidden'), 150);
     };
 
-    const movePanelUnder = (triggerEl) => {
+    // Position + size with optional "immediate" flag to skip animation
+    const setPanelGeometry = (leftPx, widthPx, { immediate = false } = {}) => {
+        if (immediate || !animReady) {
+            // skip transitions for this frame
+            const previous = panel.style.transitionProperty;
+            disablePanelTransitions();
+            panel.style.transform = `translateX(${leftPx}px)`;
+            panel.style.width     = `${widthPx}px`;
+            // restore transitions on next frame
+            requestAnimationFrame(() => {
+                panel.style.transitionProperty = previous || 'transform,width';
+            });
+        } else {
+            panel.style.transform = `translateX(${leftPx}px)`;
+            panel.style.width     = `${widthPx}px`;
+        }
+    };
+
+    const computeGeometry = (triggerEl) => {
         const containerEl = (panel.offsetParent instanceof HTMLElement) ? panel.offsetParent : nav;
         const trigRect = triggerEl.getBoundingClientRect();
         const cRect    = containerEl.getBoundingClientRect();
 
-        // Measure content width (visible .menu)
         const activeMenu = panel.querySelector('.menu:not(.hidden)');
         const contentW   = activeMenu ? activeMenu.scrollWidth : minWidth;
 
-        // Desired width, clamped to container width minus gutters
         const maxWidth = Math.max(0, Math.floor(cRect.width - gutter * 2));
         let width = Math.max(Math.round(trigRect.width), contentW, minWidth);
         width = Math.min(width, maxWidth);
 
-        // Left relative to container, then clamped so panel stays inside
         let left = Math.round(trigRect.left - cRect.left);
         left = Math.max(gutter, Math.min(left, Math.round(cRect.width - width - gutter)));
 
-        panel.style.width = `${width}px`;
-        panel.style.left  = `${left}px`;
+        return { left, width };
+    };
+
+    const movePanelUnder = (triggerEl, { immediate = false } = {}) => {
+        const { left, width } = computeGeometry(triggerEl);
+        setPanelGeometry(left, width, { immediate });
     };
 
     const openPanelFor = (index) => {
@@ -79,16 +117,26 @@ export function initNavDropdown(userOptions = {}) {
 
             const wasHidden = isPanelHidden();
             if (wasHidden) {
+                // reveal invisibly to measure without flash
                 panel.classList.remove('hidden');
-                panel.style.visibility = 'hidden'; // measure without flash
+                panel.style.visibility = 'hidden';
             }
 
             showMenuById(id);
-            movePanelUnder(trigger);
 
-            if (wasHidden) panel.style.visibility = '';
+            // First open: position with no transition; subsequent hovers animate
+            movePanelUnder(trigger, { immediate: wasHidden || !animReady });
 
-            openPanelClasses();
+            if (wasHidden) {
+                panel.style.visibility = '';
+                openPanelClasses();
+                // after first visible frame, enable transitions
+                requestAnimationFrame(() => {
+                    enablePanelTransitions();
+                    animReady = true;
+                });
+            }
+
             activeIdx = index;
             setExpanded(index);
         }, openDelay);
@@ -135,7 +183,8 @@ export function initNavDropdown(userOptions = {}) {
     ['resize', 'scroll'].forEach((evt) => {
         const handler = () => {
             if (!isPanelHidden() && activeIdx >= 0) {
-                movePanelUnder(allTriggers[activeIdx]);
+                // on layout changes, jump immediately to avoid fighting the browser
+                movePanelUnder(allTriggers[activeIdx], { immediate: true });
             }
         };
         add(window, evt, handler, { passive: true });
@@ -144,6 +193,9 @@ export function initNavDropdown(userOptions = {}) {
     add(document, 'keydown', (e) => {
         if (e.key === 'Escape' && !isPanelHidden()) closePanelSoon(true);
     });
+
+    // Ensure we start with transitions disabled (no weird first-frame slide)
+    disablePanelTransitions();
 
     return function dispose() {
         onCleanup.forEach((fn) => fn());
