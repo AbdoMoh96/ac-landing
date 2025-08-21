@@ -12,10 +12,11 @@ export function initNavDropdown(userOptions = {}) {
         closeDelay = 120,
         minWidth = 220,
         gutter = 8,
-        // motion tuning
         moveDurationMs = 180,
         sizeDurationMs = 200,
         easing = 'cubic-bezier(0.2, 0.8, 0.2, 1)',
+        // Force a direction if needed: 'ltr' | 'rtl' | 'auto'
+        direction = 'auto',
     } = userOptions;
 
     const nav         = root.querySelector(selectors.nav);
@@ -26,20 +27,30 @@ export function initNavDropdown(userOptions = {}) {
 
     if (!nav || !panel || !allTriggers.length || !menus.length) return () => {};
 
+    // ---- RTL detection ----
+    const docDir = (direction === 'auto'
+            ? (document.documentElement.getAttribute('dir') || getComputedStyle(document.documentElement).direction)
+            : direction
+    )?.toLowerCase();
+    const isRTL = docDir === 'rtl';
+
+    // Ensure predictable base positioning (transform from left=0)
+    panel.style.position = panel.style.position || 'absolute';
+    panel.style.left = '0px';
+    panel.style.right = 'auto';
+
     let closeTO = null, openTO = null, activeIdx = -1;
     const onCleanup = [];
-    let animReady = false; // prevent animation on first reveal
+    let animReady = false;
 
-    // Ensure transform/width transitions are enabled once
     const enablePanelTransitions = () => {
-        panel.style.transitionProperty   = 'transform,width';
-        // separate durations feels nicer: width can lag slightly behind x-move
-        panel.style.transitionDuration   = `${moveDurationMs}ms, ${sizeDurationMs}ms`;
+        panel.style.transitionProperty = 'transform,width';
+        panel.style.transitionDuration = `${moveDurationMs}ms, ${sizeDurationMs}ms`;
         panel.style.transitionTimingFunction = `${easing}, ${easing}`;
         panel.style.willChange = 'transform,width';
+        // Optional: transform origin at inline-start (mostly useful if you later add scale effects)
+        panel.style.transformOrigin = isRTL ? 'top right' : 'top left';
     };
-
-    // Temporarily disable transitions (for first paint / measuring)
     const disablePanelTransitions = () => {
         panel.style.transitionProperty = 'none';
     };
@@ -66,24 +77,22 @@ export function initNavDropdown(userOptions = {}) {
         else setTimeout(() => panel.classList.add('hidden'), 150);
     };
 
-    // Position + size with optional "immediate" flag to skip animation
     const setPanelGeometry = (leftPx, widthPx, { immediate = false } = {}) => {
         if (immediate || !animReady) {
-            // skip transitions for this frame
-            const previous = panel.style.transitionProperty;
+            const prev = panel.style.transitionProperty;
             disablePanelTransitions();
             panel.style.transform = `translateX(${leftPx}px)`;
-            panel.style.width     = `${widthPx}px`;
-            // restore transitions on next frame
+            panel.style.width = `${widthPx}px`;
             requestAnimationFrame(() => {
-                panel.style.transitionProperty = previous || 'transform,width';
+                panel.style.transitionProperty = prev || 'transform,width';
             });
         } else {
             panel.style.transform = `translateX(${leftPx}px)`;
-            panel.style.width     = `${widthPx}px`;
+            panel.style.width = `${widthPx}px`;
         }
     };
 
+    // Compute left (from container's left edge) and width, honoring RTL inline-start
     const computeGeometry = (triggerEl) => {
         const containerEl = (panel.offsetParent instanceof HTMLElement) ? panel.offsetParent : nav;
         const trigRect = triggerEl.getBoundingClientRect();
@@ -96,7 +105,14 @@ export function initNavDropdown(userOptions = {}) {
         let width = Math.max(Math.round(trigRect.width), contentW, minWidth);
         width = Math.min(width, maxWidth);
 
-        let left = Math.round(trigRect.left - cRect.left);
+        // inline-start alignment:
+        // LTR => align panel's left to trigger's left
+        // RTL => align panel's right to trigger's right
+        let left = isRTL
+            ? Math.round(trigRect.right - cRect.left - width)
+            : Math.round(trigRect.left  - cRect.left);
+
+        // Clamp inside container with gutters
         left = Math.max(gutter, Math.min(left, Math.round(cRect.width - width - gutter)));
 
         return { left, width };
@@ -117,20 +133,16 @@ export function initNavDropdown(userOptions = {}) {
 
             const wasHidden = isPanelHidden();
             if (wasHidden) {
-                // reveal invisibly to measure without flash
                 panel.classList.remove('hidden');
-                panel.style.visibility = 'hidden';
+                panel.style.visibility = 'hidden'; // measure without flash
             }
 
             showMenuById(id);
-
-            // First open: position with no transition; subsequent hovers animate
             movePanelUnder(trigger, { immediate: wasHidden || !animReady });
 
             if (wasHidden) {
                 panel.style.visibility = '';
                 openPanelClasses();
-                // after first visible frame, enable transitions
                 requestAnimationFrame(() => {
                     enablePanelTransitions();
                     animReady = true;
@@ -183,7 +195,7 @@ export function initNavDropdown(userOptions = {}) {
     ['resize', 'scroll'].forEach((evt) => {
         const handler = () => {
             if (!isPanelHidden() && activeIdx >= 0) {
-                // on layout changes, jump immediately to avoid fighting the browser
+                // Jump to the correct spot during layout changes
                 movePanelUnder(allTriggers[activeIdx], { immediate: true });
             }
         };
@@ -194,7 +206,6 @@ export function initNavDropdown(userOptions = {}) {
         if (e.key === 'Escape' && !isPanelHidden()) closePanelSoon(true);
     });
 
-    // Ensure we start with transitions disabled (no weird first-frame slide)
     disablePanelTransitions();
 
     return function dispose() {
