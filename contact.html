@@ -110,8 +110,80 @@
     </section>
     <!--hero section ends here -->
 
-    <section class="h-[55vh] w-full relative overflow-hidden bg-white">
-        <h1 class="text-center my-4">contact us</h1>
+    <section class="px-20 py-20 bg-white">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+            <!-- Left: copy + contacts + image placeholder -->
+            <div>
+                <h2 class="text-3xl font-extrabold text-cyan-600">Get in touch</h2>
+                <p class="mt-3 text-slate-500 max-w-xl">
+                    Questions, comments, or suggestions? Simply fill in the form
+                    and we’ll be in touch shortly.
+                </p>
+
+                <ul class="mt-8 space-y-4 text-slate-700">
+                    <li class="flex items-center gap-3">
+                        <!-- phone icon -->
+                        <svg class="w-5 h-5 text-cyan-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15 .84 0 1.653-.064 2.438-.188a1.125 1.125 0 00.927-1.11v-3.03a1.125 1.125 0 00-.852-1.09l-3.403-.851a1.125 1.125 0 00-1.173.417l-.97 1.293a.75.75 0 01-1.21-.046 12.03 12.03 0 01-2.21-3.58.75.75 0 01.36-.936l1.35-.72a1.125 1.125 0 00.57-1.07l-.38-3.45A1.125 1.125 0 0010.5 3h-3a1.125 1.125 0 00-1.11.927c-.124.785-.188 1.598-.188 2.438z"/></svg>
+                        <div>
+                            <a href="tel:+20224738735" class="hover:text-cyan-600">+202 24 738 735</a>
+                            <span class="mx-1 text-slate-400">|</span>
+                            <a href="tel:+201006150319" class="hover:text-cyan-600">+201 006 150 319</a>
+                        </div>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <!-- mail icon -->
+                        <svg class="w-5 h-5 text-cyan-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5A2.25 2.25 0 002.25 6.75m19.5 0v.243a2.25 2.25 0 01-1.035 1.9l-6.75 4.219a2.25 2.25 0 01-2.43 0L4.785 8.893a2.25 2.25 0 01-1.035-1.9V6.75"/></svg>
+                        <a href="mailto:info@arabcalibers.com" class="hover:text-cyan-600">info@arabcalibers.com</a>
+                    </li>
+                </ul>
+
+                <!-- IMAGE PLACEHOLDER (empty img tag as requested) -->
+                <div class="mt-10">
+                    <img src="" alt="Contact illustration" class="w-full max-w-md h-64 object-contain bg-white/0" loading="lazy">
+                    <!-- Add your image src later (kept empty intentionally) -->
+                </div>
+            </div>
+
+            <!-- Right: form -->
+            <form action="#" method="POST" class="w-full">
+                <div class="grid sm:grid-cols-2 gap-8">
+                    <label class="block">
+                        <span class="block text-sm text-slate-500">First Name</span>
+                        <input type="text" name="first_name" class="mt-2 w-full underline-input focus:outline-none" placeholder=" ">
+                    </label>
+
+                    <label class="block">
+                        <span class="block text-sm text-slate-500">Last Name</span>
+                        <input type="text" name="last_name" class="mt-2 w-full underline-input focus:outline-none" placeholder=" ">
+                    </label>
+
+                    <label class="block">
+                        <span class="block text-sm text-slate-500">Email</span>
+                        <input type="email" name="email" class="mt-2 w-full underline-input focus:outline-none" placeholder=" ">
+                    </label>
+
+                    <label class="block">
+                        <span class="block text-sm text-slate-500">Phone Number</span>
+                        <input type="tel" name="phone" class="mt-2 w-full underline-input focus:outline-none" placeholder=" ">
+                    </label>
+                </div>
+
+                <label class="block mt-10">
+                    <span class="block text-sm text-slate-500">Message</span>
+                    <textarea name="message" rows="4" class="mt-2 w-full underline-input focus:outline-none" placeholder="Write your message.."></textarea>
+                </label>
+
+                <div class="mt-8 flex flex-col  justify-between sm:flex-row items-start sm:items-center gap-6">
+                    <!-- Google reCAPTCHA -->
+                    <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+
+                    <button type="submit"
+                            class="inline-flex items-center justify-center rounded-full px-8 py-3 font-semibold text-white bg-cyan-600 hover:bg-cyan-700 transition">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
     </section>
 
     <!--        footer start -->
@@ -208,5 +280,6 @@
     <!--        footer end -->
 </main>
 <script type="module" src="/src/main.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>
