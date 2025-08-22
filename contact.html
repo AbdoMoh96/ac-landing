@@ -9,7 +9,7 @@
 <body class="bg-black">
 <main class="container mx-auto relative">
     <!--  nav starts here -->
-    <nav class="navbar absolute w-full p-5 flex items-center justify-between text-white bg-gradient-to-b from-black to-[#66666600] z-50 text-[14px] font-poppins font-semibold">
+    <nav class="navbar absolute w-full p-5 flex items-center justify-between text-white z-50 text-[14px] font-poppins font-semibold">
         <div id="brand-logo" class="shrink-0">
             <img src="/logos/brand-logo.png" alt="logo" class=""/>
         </div>
@@ -92,20 +92,10 @@
     <!-- nav ends here-->
 
     <!-- hero section start-->
-    <section class="h-[55vh] w-full relative overflow-hidden">
-        <video
-                loop
-                muted
-                autoplay
-                playsinline
-                class="z-[-1] absolute top-0"
-        >
-            <source src="/videos/teaser.mp4" type="video/mp4" />
-            Your browser does not support the HTML5 video tag.
-        </video>
-        <div class="absolute bottom-10 left-10 rtl:right-10 text-white font-poppins w-full">
-            <span class="block font-bold text-[48px]"> <span class="text-[#FDD8AA]">Exceptional</span> Service</span>
-            <span class="block font-medium text-[15px] w-[50%]">Arab Calibers provides exceptional consulting services to organizations and sectors working in the field of software engineering by a group of experts</span>
+    <section class="h-[471px] w-full relative overflow-hidden bg-gradient-to-b from-[rgba(1,30,41,0.7)] to-[rgba(102,102,102,0)]">
+        <img class="z-[-1] absolute top-0 " src="/background/contact-us-hero.jpg" alt="header-pg" />
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white font-poppins">
+            <span class="block text-center text-[48px] font-outfit font-medium text-white">Contact Us</span>
         </div>
     </section>
     <!--hero section ends here -->
@@ -114,32 +104,32 @@
         <div class="grid lg:grid-cols-2 gap-12 items-start">
             <!-- Left: copy + contacts + image placeholder -->
             <div>
-                <h2 class="text-3xl font-extrabold text-cyan-600">Get in touch</h2>
-                <p class="mt-3 text-slate-500 max-w-xl">
+                <h2 class="text-[28px] font-outfit font-semibold text-[#00A1C5]">Get in touch</h2>
+                <p class="mt-3 text-[18px] font-outfit font-normal text-[#A6A6A6]">
                     Questions, comments, or suggestions? Simply fill in the form
                     and we’ll be in touch shortly.
                 </p>
 
-                <ul class="mt-8 space-y-4 text-slate-700">
+                <ul class="mt-8 space-y-4 text-[16px] font-poppins font-normal text-[#1C5064]">
                     <li class="flex items-center gap-3">
                         <!-- phone icon -->
-                        <svg class="w-5 h-5 text-cyan-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15 .84 0 1.653-.064 2.438-.188a1.125 1.125 0 00.927-1.11v-3.03a1.125 1.125 0 00-.852-1.09l-3.403-.851a1.125 1.125 0 00-1.173.417l-.97 1.293a.75.75 0 01-1.21-.046 12.03 12.03 0 01-2.21-3.58.75.75 0 01.36-.936l1.35-.72a1.125 1.125 0 00.57-1.07l-.38-3.45A1.125 1.125 0 0010.5 3h-3a1.125 1.125 0 00-1.11.927c-.124.785-.188 1.598-.188 2.438z"/></svg>
+                        <img src="/icons/phone-call.png" class="w-5 h-5" alt="phone" />
                         <div>
                             <a href="tel:+20224738735" class="hover:text-cyan-600">+202 24 738 735</a>
-                            <span class="mx-1 text-slate-400">|</span>
+                            <span class="mx-1 text-[#1C5064]">|</span>
                             <a href="tel:+201006150319" class="hover:text-cyan-600">+201 006 150 319</a>
                         </div>
                     </li>
                     <li class="flex items-center gap-3">
                         <!-- mail icon -->
-                        <svg class="w-5 h-5 text-cyan-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5A2.25 2.25 0 002.25 6.75m19.5 0v.243a2.25 2.25 0 01-1.035 1.9l-6.75 4.219a2.25 2.25 0 01-2.43 0L4.785 8.893a2.25 2.25 0 01-1.035-1.9V6.75"/></svg>
+                        <img src="/icons/ic_sharp-email.png" class="w-5 h-5" alt="email" />
                         <a href="mailto:info@arabcalibers.com" class="hover:text-cyan-600">info@arabcalibers.com</a>
                     </li>
                 </ul>
 
                 <!-- IMAGE PLACEHOLDER (empty img tag as requested) -->
                 <div class="mt-10">
-                    <img src="" alt="Contact illustration" class="w-full max-w-md h-64 object-contain bg-white/0" loading="lazy">
+                    <img src="/background/contact-us-form.jpg" alt="Contact illustration" class="w-[476px]" loading="lazy">
                     <!-- Add your image src later (kept empty intentionally) -->
                 </div>
             </div>
