@@ -15,4 +15,6 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
   ],
+  // use base when serving static files
+  // base: './',
 })
