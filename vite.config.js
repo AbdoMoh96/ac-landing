@@ -7,7 +7,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'), //======> done
-        about: resolve(__dirname, 'about.html'),
+        about: resolve(__dirname, 'about.html'), //======> done
         album: resolve(__dirname, 'album.html'),
         consultancy_services: resolve(__dirname, 'consultancy_services.html'),
         training_and_workshop: resolve(__dirname, 'training_and_workshop.html'),
