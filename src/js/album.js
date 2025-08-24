@@ -1,7 +1,6 @@
 let swiper = new Swiper(".mySwiper", {
     lazy: true,
-    slidesPerView: 4,
-    spaceBetween: 45,
+    spaceBetween: 50,
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -10,6 +9,23 @@ let swiper = new Swiper(".mySwiper", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
+    breakpoints: {
+        // when window width is >= 0px (default)
+        0: {
+            slidesPerView: 1,
+        },
+        // when window width is >= 640px
+        640: {
+            slidesPerView: 2,
+        },
+        700: {
+            slidesPerView: 3,
+        },
+        // when window width is >= 1024px
+        1024: {
+            slidesPerView: 4,
+        },
+    }
 });
 
 let swiperModal = new Swiper(".modalSwiper", {
