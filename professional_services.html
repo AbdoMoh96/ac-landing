@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <!--    <link rel="icon" type="image/svg+xml" href="/vite.svg" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+</head>
+<body class="bg-black">
+<main class="container mx-auto relative bg-no-repeat bg-bottom-right bg-[url(/background/victor-small.png)] bg-white">
+    <!--  nav starts here -->
+    <nav class="navbar absolute w-full p-5 flex items-center justify-between text-white z-50 text-[14px] font-poppins font-semibold">
+        <div id="brand-logo" class="shrink-0">
+            <img src="/logos/brand-logo.png" alt="logo" class=""/>
+        </div>
+
+        <!-- Main menu -->
+        <div id="menu" class="relative flex items-center gap-1 pr-7">
+            <!-- Normal link (closes panel) -->
+            <a class="nav-link px-2 py-1 rounded-md" href="./index.html">Home</a>
+
+            <!-- Triggers (open the shared dropdown and swap content) -->
+            <a class="nav-item px-2 py-1 rounded-md focus:outline-none focus:ring-2"
+               href="#"
+               data-target="menu-company"
+               aria-expanded="false">Company</a>
+
+            <a class="nav-item px-2 py-1 rounded-md focus:outline-none focus:ring-2"
+               href="#"
+               data-target="menu-services"
+               aria-expanded="false">Our Services</a>
+
+            <a class="nav-item px-2 py-1 rounded-md focus:outline-none focus:ring-2"
+               href="#"
+               data-target="menu-careers"
+               aria-expanded="false">Careers</a>
+
+            <a class="nav-link px-2 py-1 rounded-md" href="#">Markets We Server</a>
+
+            <!-- Normal link (closes panel) -->
+            <a class="nav-link px-2 py-1 rounded-full pt-[5px] pb-[5px] pr-[23px] pl-[23px] bg-[#FDD8AA] text-[12px] text-[#1C5064] font-medium" href="./contact.html">
+                Contact Us
+            </a>
+
+            <a class="nav-item px-2 py-1 rounded-md focus:outline-none focus:ring-2"
+               href="#"
+               data-target="menu-lang"
+               aria-expanded="false"><img src="/icons/lang.png" alt="language"/></a>
+
+            <!-- Shared dropdown panel (absolutely positioned under active trigger) -->
+            <div id="dropdown"
+                 class="absolute top-full left-0 mt-2 hidden opacity-0 -translate-y-2 pointer-events-none
+                transition duration-150 text-[12px] font-normal ease-out"
+                 style="left:0px;">
+                <!-- Menus: only one is visible at a time -->
+                <div id="menu-company"
+                     class="menu hidden min-w-[220px] bg-black/55 text-white overflow-hidden">
+                    <ul class="py-2">
+                        <li><a class="block border-b-1 border-b-gray-700 transition-all duration-300  px-4 py-2 hover:text-amber-400" href="#">About Us</a></li>
+                        <li><a class="block transition-all duration-300  px-4 py-2 hover:text-amber-400" href="#">Album</a></li>
+                    </ul>
+                </div>
+
+                <div id="menu-services"
+                     class="menu hidden min-w-[220px] bg-black/55 text-white overflow-hidden">
+                    <ul class="py-2">
+                        <li><a class="block border-b-1 border-b-gray-700 transition-all duration-300  px-4 py-2 hover:text-amber-400" href="#">Consultancy Services</a></li>
+                        <li><a class="block border-b-1 border-b-gray-700 transition-all duration-300  px-4 py-2 hover:text-amber-400" href="#">Training and Workshops</a></li>
+                        <li><a class="block border-b-1 border-b-gray-700 transition-all duration-300  px-4 py-2 hover:text-amber-400" href="#">Professional Services</a></li>
+                        <li><a class="block transition-all duration-300  px-4 py-2 hover:text-amber-400" href="#">Staff Augmentation</a></li>
+                    </ul>
+                </div>
+
+                <div id="menu-careers"
+                     class="menu hidden min-w-[220px] bg-black/55 text-white overflow-hidden">
+                    <ul class="py-2">
+                        <li><a class="block border-b-1 border-b-gray-700 transition-all duration-300  px-4 py-2 hover:text-amber-400" href="./vacancies.html">Vacancies</a></li>
+                        <li><a class="block transition-all duration-300  px-4 py-2 hover:text-amber-400" href="#">Submit your CV</a></li>
+                    </ul>
+                </div>
+
+                <div id="menu-lang"
+                     class="menu hidden min-w-[220px] bg-black/55 text-white overflow-hidden">
+                    <ul class="py-2">
+                        <li><a class="block border-b-1 border-b-gray-700 transition-all duration-300  px-4 py-2 hover:text-amber-400" href="#">English</a></li>
+                        <li><a class="block transition-all duration-300  px-4 py-2 hover:text-amber-400" href="#">Arabic</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- nav ends here-->
+
+    <!-- hero section start-->
+    <section class="h-[471px] w-full relative overflow-hidden">
+        <div class="absolute bg-gradient-to-b from-[rgba(1,30,41,0.7)] to-[rgba(102,102,102,0)] w-full h-full z-10 left-0 top-0"></div>
+        <img class=" absolute top-0" src="/background/professional-services-hero.jpg" alt="header-pg" />
+        <div class="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white font-poppins">
+            <span class="block text-center text-[48px] font-outfit font-medium text-white">Professional Services</span>
+        </div>
+    </section>
+    <!--hero section ends here -->
+
+    
+
+    <section class="px-10 mt-10">
+        <div class="flex items-center gap-3">
+            <h2 class="font-semibold font-outfit text-[32px] text-[#1C5064]">Explore Other Services </h2>
+        </div>
+
+        <!-- Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-1 place-items-center py-9 w-full">
+            <!-- Card 1 -->
+            <a href="#" class="group relative block overflow-hidden rounded-2xl shadow-lg w-[338px] h-[270px]">
+                <img
+                        src="/services/professional-services-thump.jpg"
+                        alt="Professional Services"
+                        class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <!-- overlay + gradient -->
+                <div class="absolute inset-0 bg-[#1C5064]/20"></div>
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/60 to-transparent"></div>
+
+                <!-- content -->
+                <div class="absolute bottom-4 left-5 right-16">
+                    <p class="font-semibold font-outfit text-white text-lg md:text-xl">
+                        Professional Services
+                    </p>
+                </div>
+
+                <!-- arrow -->
+                <span
+                        class="absolute bottom-3 right-3 grid h-10 w-10 place-items-center rounded-full bg-[#1FB6C9] text-white shadow-lg ring-2 ring-white/40 transition-transform duration-300 group-hover:translate-x-1"
+                        aria-hidden="true"
+                >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </span>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="#" class="group relative block overflow-hidden rounded-2xl shadow-lg w-[338px] h-[270px]">
+                <img
+                        src="/services/staff-augmentation-thump.jpg"
+                        alt="Staff Augmentation"
+                        class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div class="absolute inset-0 bg-[#1C5064]/20"></div>
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/60 to-transparent"></div>
+
+                <div class="absolute bottom-4 left-5 right-16">
+                    <p class="font-semibold font-outfit text-white text-lg md:text-xl">
+                        Staff Augmentation
+                    </p>
+                </div>
+
+                <span
+                        class="absolute bottom-3 right-3 grid h-10 w-10 place-items-center rounded-full bg-[#1FB6C9] text-white shadow-lg ring-2 ring-white/40 transition-transform duration-300 group-hover:translate-x-1"
+                        aria-hidden="true"
+                >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </span>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="#" class="group relative block overflow-hidden rounded-2xl shadow-lg w-[338px] h-[270px]">
+                <img
+                        src="/services/training-services-thump.jpg"
+                        alt="Training Services"
+                        class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div class="absolute inset-0 bg-[#1C5064]/20"></div>
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/60 to-transparent"></div>
+
+                <div class="absolute bottom-4 left-5 right-16">
+                    <p class="font-semibold font-outfit text-white text-lg md:text-xl">
+                        Training Services
+                    </p>
+                </div>
+
+                <span
+                        class="absolute bottom-3 right-3 grid h-10 w-10 place-items-center rounded-full bg-[#1FB6C9] text-white shadow-lg ring-2 ring-white/40 transition-transform duration-300 group-hover:translate-x-1"
+                        aria-hidden="true"
+                >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </span>
+            </a>
+        </div>
+
+    </section>
+
+</main>
+<!--        footer start -->
+<footer class="text-white relative p-12 container mx-auto" style="background: radial-gradient(50% 50% at 50% 50%, #2E657A 0%, #1C5064 100%);">
+    <div class="flex flex-wrap gap-20 mb-20">
+
+        <!-- Brand + Socials -->
+        <div class="flex flex-col justify-between items-center">
+            <div class="">
+                <!-- Company logo (placeholder image) -->
+                <img src="/logos/brand-logo.png" alt="logo" class=""/>
+            </div>
+
+            <!-- Social icons (placeholder images) -->
+            <div class="mt-8 flex items-center gap-5 absolute bottom-4 left-16 rtl:right-16">
+                <a href="#" aria-label="Facebook" class="opacity-90 hover:opacity-100 transition">
+                    <img src="/icons/facebook.png"  alt="Facebook" />
+                </a>
+                <a href="#" aria-label="LinkedIn" class="opacity-90 hover:opacity-100 transition">
+                    <img src="/icons/linkedin.png" alt="LinkedIn" />
+                </a>
+                <a href="#" aria-label="YouTube" class="opacity-90 hover:opacity-100 transition">
+                    <img src="/icons/youtube.png" alt="YouTube"/>
+                </a>
+                <a href="#" aria-label="TikTok" class="opacity-90 hover:opacity-100 transition">
+                    <img src="/icons/tiktok.png" alt="TikTok" />
+                </a>
+                <a href="#" aria-label="X (Twitter)" class="opacity-90 hover:opacity-100 transition">
+                    <img src="/icons/x.png" alt="X" class="h-6 w-6" />
+                </a>
+            </div>
+        </div>
+
+        <!-- Company -->
+        <nav class="">
+            <h3 class="text-[#FDD8AA] font-semibold ">Company</h3>
+            <ul class="mt-4 space-y-3">
+                <li><a href="#" class="hover:text-[#FDD8AA]">About us</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA]">Album</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA]">Markets we serve</a></li>
+            </ul>
+        </nav>
+
+        <!-- Our Services -->
+        <nav class="">
+            <h3 class="text-[#FDD8AA] font-semibold tracking-wide">Our Services</h3>
+            <ul class="mt-4 space-y-3">
+                <li><a href="#" class="hover:text-[#FDD8AA]">IT Professional Services</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA]">Consulting Services</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA]">Staff Augmentation</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA]">Training Services</a></li>
+            </ul>
+        </nav>
+
+        <!-- Careers -->
+        <nav class="">
+            <h3 class="text-[#FDD8AA] font-semibold tracking-wide">Careers</h3>
+            <ul class="mt-4 space-y-3">
+                <li><a href="#" class="hover:text-[#FDD8AA]">Vacancies</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA]">Submit your CV</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contact Us -->
+        <div class="">
+            <h3 class="text-[#FDD8AA] font-semibold tracking-wide">Contact Us</h3>
+            <div class="flex gap-2 items-center my-5">
+                <!-- phone icon placeholder -->
+                <img src="/icons/Phone_fill.png" alt="" class=" opacity-90" />
+                <a href="tel:+20224738735" class="hover:text-[#FDD8AA]">+202 24 738 735</a>
+                <span class="mx-2 opacity-70">|</span>
+                <a href="tel:+201006150319" class="hover:text-[#FDD8AA]">+201 006 150 319</a>
+            </div>
+            <div class="flex gap-2 items-center">
+                <!-- email icon placeholder -->
+                <img src="/icons/Mail.png" alt="" class="opacity-90" />
+                <a href="mailto:info@arabcalibers.com" class="hover:text-[#FDD8AA]">info@arabcalibers.com</a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Copyright -->
+    <div class="text-sm text-white/80">
+        <p class="w-full text-center mt-10">2017 © All Rights Reserved to
+            <a href="#" class="text-[#FDD8AA] hover:text-[#FDD8AA]">Arab Calibers</a>
+        </p>
+    </div>
+
+    <img class="absolute bottom-0 ltr:right-0 rtl:left-0 rtl:scale-x-[-1]" src="/background/footer-pg.png" alt="pg" />
+
+</footer>
+<!--        footer end -->
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
