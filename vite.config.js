@@ -14,11 +14,9 @@ export default defineConfig({
         professional_services: resolve(__dirname, 'professional_services.js.html'), //======> done
         staff_augmentation: resolve(__dirname, 'staff_augmentation.html'), //======> done
         vacancies: resolve(__dirname, 'vacancies.html'), //======> done
-        submit_your_cv: resolve(__dirname, 'submit_your_cv.html'),
-        markets_we_serve: resolve(__dirname, 'markets_we_serve.html'),
+        submit_your_cv: resolve(__dirname, 'submit_your_cv.html'), //======> done
+        markets_we_serve: resolve(__dirname, 'markets_we_serve.html'), //======> done
         contact: resolve(__dirname, 'contact.html'), //======> done
-
-
       },
     },
   },
