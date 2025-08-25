@@ -103,9 +103,9 @@
 
     <section class=" p-6">
 
-        <div class="grid md:grid-cols-2 gap-6">
+        <div class="flex justify-around">
             <!-- LEFT -->
-            <div id="leftCard" class="relative bg-white rounded-3xl shadow-sm p-6 md:p-8">
+            <div id="leftCard" class="w-[464px] h-[386px] relative bg-white rounded-3xl shadow-sm ">
                 <!-- pale rail -->
                 <span class="absolute left-3 top-6 bottom-6 w-1 bg-cyan-100 rounded-full"></span>
                 <!-- animated indicator -->
@@ -113,8 +113,8 @@
                       class="absolute left-3 w-1 h-12 bg-cyan-500 rounded-full transition-transform duration-300 ease-out"
                       style="transform: translateY(0px)"></span>
 
-                <ul id="serviceList" class="space-y-6 ml-6">
-                    <li data-target="#pane-taas" class="service-item group flex items-center gap-4 cursor-pointer">
+                <ul id="serviceList" class="space-y-6 ml-6 py-4">
+                    <li data-target="#pane-taas" class="service-item group flex items-center gap-4 cursor-pointer h-17">
                         <svg class="w-10 h-10 text-cyan-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                             <circle cx="12" cy="12" r="3.5"/><path d="M19.4 15a8 8 0 0 0 .2-1l2-1.2-2-3.6-2.1.5a8 8 0 0 0-.8-.8l.5-2.1-3.6-2-1.2 2a8 8 0 0 0-1 0l-1.2-2-3.6 2 .5 2.1c-.28.25-.55.52-.8.8L4.4 9.2l-2 3.6 2 1.2a8 8 0 0 0 .2 1l-2 1.2 2 3.6 2.1-.5c.25.3.52.57.8.82l-.5 2.05 3.6 2.02 1.2-2.02c.34.02.68.02 1.02 0l1.2 2.02 3.6-2.02-.5-2.05c.28-.25.55-.52.8-.82l2.1.5 2-3.6-2-1.2Z"/>
                         </svg>
@@ -124,7 +124,7 @@
                         </div>
                     </li>
 
-                    <li data-target="#pane-spi" class="service-item group flex items-center gap-4 cursor-pointer">
+                    <li data-target="#pane-spi" class="service-item group flex items-center gap-4 cursor-pointer h-17">
                         <svg class="w-10 h-10 text-cyan-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                             <rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M10 6h4M6 10v4M14 10v4M10 18h4"/>
                         </svg>
@@ -134,7 +134,7 @@
                         </div>
                     </li>
 
-                    <li data-target="#pane-ado" class="service-item group flex items-center gap-4 cursor-pointer">
+                    <li data-target="#pane-ado" class="service-item group flex items-center gap-4 cursor-pointer h-17">
                         <svg class="w-10 h-10 text-cyan-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                             <path d="M4 17 12 3l3 6-7 11-4-3Z"/><path d="M21 17h-8l3-4 5 4Z"/>
                         </svg>
@@ -144,7 +144,7 @@
                         </div>
                     </li>
 
-                    <li data-target="#pane-jira" class="service-item group flex items-center gap-4 cursor-pointer">
+                    <li data-target="#pane-jira" class="service-item group flex items-center gap-4 cursor-pointer h-17">
                         <svg class="w-10 h-10 text-cyan-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                             <path d="M12 3 21 12l-9 9L3 12l9-9Z"/><path d="M9 12l3-3 3 3-3 3-3-3Z"/>
                         </svg>
@@ -157,7 +157,7 @@
             </div>
 
             <!-- RIGHT (all panes present; we just hide/show) -->
-            <div class="bg-white rounded-3xl shadow-sm p-6 md:p-10">
+            <div class="bg-white w-[835px] h-[386px] rounded-3xl shadow-sm p-6 md:p-10">
                 <!-- TaaS -->
                 <div id="pane-taas" class="pane flex flex-col md:flex-row gap-8 items-center">
                     <div class="flex-1">
