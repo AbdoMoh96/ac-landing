@@ -6,9 +6,17 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-        contact: resolve(__dirname, 'contact.html'),
-        vacancies: resolve(__dirname, 'vacancies.html'),
+        main: resolve(__dirname, 'index.html'), //======> done
+        about: resolve(__dirname, 'about.html'), //======> done
+        album: resolve(__dirname, 'album.html'), //======> done
+        consultancy_services: resolve(__dirname, 'consultancy_services.html'), //======> done
+        training_and_workshop: resolve(__dirname, 'training_and_workshop.html'), //======> done
+        professional_services: resolve(__dirname, 'professional_services.js.html'), //======> done
+        staff_augmentation: resolve(__dirname, 'staff_augmentation.html'), //======> done
+        vacancies: resolve(__dirname, 'vacancies.html'), //======> done
+        submit_your_cv: resolve(__dirname, 'submit_your_cv.html'), //======> done
+        markets_we_serve: resolve(__dirname, 'markets_we_serve.html'), //======> done
+        contact: resolve(__dirname, 'contact.html'), //======> done
       },
     },
   },
