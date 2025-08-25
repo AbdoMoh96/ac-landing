@@ -103,7 +103,7 @@
 
     <section class=" p-6">
 
-        <div class="flex justify-around">
+        <div class="flex justify-around flex-col lg:flex-row">
             <!-- LEFT -->
             <div id="leftCard" class="w-[464px] h-[386px] relative bg-white rounded-3xl shadow-[0px_4px_3.9px_2px_#0000001C]">
                 <!-- pale rail -->
@@ -115,38 +115,31 @@
 
                 <ul id="serviceList" class="space-y-6 ml-6 py-4">
                     <li data-target="#pane-taas" class="service-item group flex items-center gap-4 cursor-pointer h-17">
-                        <svg class="w-10 h-10 text-cyan-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                            <circle cx="12" cy="12" r="3.5"/><path d="M19.4 15a8 8 0 0 0 .2-1l2-1.2-2-3.6-2.1.5a8 8 0 0 0-.8-.8l.5-2.1-3.6-2-1.2 2a8 8 0 0 0-1 0l-1.2-2-3.6 2 .5 2.1c-.28.25-.55.52-.8.8L4.4 9.2l-2 3.6 2 1.2a8 8 0 0 0 .2 1l-2 1.2 2 3.6 2.1-.5c.25.3.52.57.8.82l-.5 2.05 3.6 2.02 1.2-2.02c.34.02.68.02 1.02 0l1.2 2.02 3.6-2.02-.5-2.05c.28-.25.55-.52.8-.82l2.1.5 2-3.6-2-1.2Z"/>
-                        </svg>
+                        <img src="/icons/services/testing-as-a-service.png" alt="testing-as-a-service" />
                         <div class="flex-1">
-                            <h3 class="font-semibold text-slate-900">Testing as a Service TaaS</h3>
+                            <h3 class="font-medium text-[20px] text-[#00A1C5]">Testing as a Service TaaS</h3>
                         </div>
                     </li>
 
                     <li data-target="#pane-spi" class="service-item group flex items-center gap-4 cursor-pointer h-17">
-                        <svg class="w-10 h-10 text-cyan-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                            <rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M10 6h4M6 10v4M14 10v4M10 18h4"/>
-                        </svg>
+                        <img src="/icons/services/software-process.png" alt="testing-as-a-service" />
+
                         <div class="flex-1">
-                            <h3 class="font-semibold text-slate-900">Software Process Improvement</h3>
+                            <h3 class="font-medium text-[20px] text-[#00A1C5]">Software Process Improvement</h3>
                         </div>
                     </li>
 
                     <li data-target="#pane-ado" class="service-item group flex items-center gap-4 cursor-pointer h-17">
-                        <svg class="w-10 h-10 text-cyan-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                            <path d="M4 17 12 3l3 6-7 11-4-3Z"/><path d="M21 17h-8l3-4 5 4Z"/>
-                        </svg>
+                        <img src="/icons/services/azure.png" alt="testing-as-a-service" />
                         <div class="flex-1">
-                            <h3 class="font-semibold text-slate-900">Azure DevOps Implementation</h3>
+                            <h3 class="font-medium text-[20px] text-[#00A1C5]">Azure DevOps Implementation</h3>
                         </div>
                     </li>
 
                     <li data-target="#pane-jira" class="service-item group flex items-center gap-4 cursor-pointer h-17">
-                        <svg class="w-10 h-10 text-cyan-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                            <path d="M12 3 21 12l-9 9L3 12l9-9Z"/><path d="M9 12l3-3 3 3-3 3-3-3Z"/>
-                        </svg>
+                        <img src="/icons/services/jira.png" alt="testing-as-a-service" />
                         <div class="flex-1">
-                            <h3 class="font-semibold text-slate-900">JIRA Implementation</h3>
+                            <h3 class="font-medium text-[20px] text-[#00A1C5]">JIRA Implementation</h3>
                         </div>
                     </li>
                 </ul>
@@ -163,17 +156,8 @@
                         </p>
                         <button class="mt-6 px-6 py-3 rounded-full bg-cyan-600 text-white hover:bg-cyan-700 transition">Request Service</button>
                     </div>
-                    <div class="w-full md:w-72 lg:w-80">
-                        <svg viewBox="0 0 240 240" class="w-full h-auto">
-                            <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#06b6d4"/><stop offset="1" stop-color="#67e8f9"/></linearGradient></defs>
-                            <circle cx="120" cy="120" r="100" fill="url(#g1)" opacity=".15"/>
-                            <g fill="none" stroke="#06b6d4" stroke-width="4">
-                                <circle cx="120" cy="120" r="70"/>
-                                <path d="M120 50v20M120 170v20M50 120h20M170 120h20"/>
-                                <circle cx="120" cy="120" r="28"/>
-                                <path d="M95 145l-20 20M145 95l20-20M145 145l20 20M95 95L75 75"/>
-                            </g>
-                        </svg>
+                    <div class="w-4/12 ">
+                        <img class="w-full h-full" src="/icons/services/testing.png" alt="testing-as-a-service" />
                     </div>
                 </div>
 
@@ -186,18 +170,8 @@
                         </p>
                         <button class="mt-6 px-6 py-3 rounded-full bg-cyan-600 text-white hover:bg-cyan-700 transition">Request Service</button>
                     </div>
-                    <div class="w-full md:w-72 lg:w-80">
-                        <svg viewBox="0 0 240 240" class="w-full h-auto">
-                            <circle cx="120" cy="120" r="104" fill="#ecfeff" />
-                            <g fill="none" stroke="#06b6d4" stroke-width="4">
-                                <path d="M40 160c30-50 70-70 100-70s50 20 60 40"/>
-                                <path d="M40 160h160"/>
-                                <circle cx="60" cy="160" r="6" fill="#06b6d4"/>
-                                <circle cx="100" cy="120" r="6" fill="#06b6d4"/>
-                                <circle cx="150" cy="100" r="6" fill="#06b6d4"/>
-                                <circle cx="190" cy="140" r="6" fill="#06b6d4"/>
-                            </g>
-                        </svg>
+                    <div class="w-4/12 ">
+                        <img class="w-full h-full" src="/icons/services/testing.png" alt="testing-as-a-service" />
                     </div>
                 </div>
 
@@ -210,16 +184,8 @@
                         </p>
                         <button class="mt-6 px-6 py-3 rounded-full bg-cyan-600 text-white hover:bg-cyan-700 transition">Request Service</button>
                     </div>
-                    <div class="w-full md:w-72 lg:w-80">
-                        <svg viewBox="0 0 240 240" class="w-full h-auto">
-                            <defs><linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs>
-                            <path d="M30 150 120 30l25 50-65 105-50-35Z" fill="url(#g2)" opacity=".2"/>
-                            <g fill="none" stroke="#06b6d4" stroke-width="4">
-                                <path d="M30 150 120 30l25 50-65 105-50-35Z"/>
-                                <path d="M210 160h-90l30-40 60 40Z"/>
-                                <path d="M120 30v40M75 180l10-16"/>
-                            </g>
-                        </svg>
+                    <div class="w-4/12 ">
+                        <img class="w-full h-full" src="/icons/services/testing.png" alt="testing-as-a-service" />
                     </div>
                 </div>
 
@@ -232,14 +198,8 @@
                         </p>
                         <button class="mt-6 px-6 py-3 rounded-full bg-cyan-600 text-white hover:bg-cyan-700 transition">Request Service</button>
                     </div>
-                    <div class="w-full md:w-72 lg:w-80">
-                        <svg viewBox="0 0 240 240" class="w-full h-auto">
-                            <g fill="none" stroke="#06b6d4" stroke-width="4">
-                                <path d="M120 20 220 120 120 220 20 120 120 20Z" fill="#ecfeff"/>
-                                <path d="M90 120l30-30 30 30-30 30-30-30Z" fill="#cffafe"/>
-                                <path d="M60 150l60 60M180 60l-20 20"/>
-                            </g>
-                        </svg>
+                    <div class="w-4/12 ">
+                        <img class="w-full h-full" src="/icons/services/testing.png" alt="testing-as-a-service" />
                     </div>
                 </div>
             </div>
