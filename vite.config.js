@@ -10,8 +10,8 @@ export default defineConfig({
         about: resolve(__dirname, 'about.html'), //======> done
         album: resolve(__dirname, 'album.html'), //======> done
         consultancy_services: resolve(__dirname, 'consultancy_services.html'), //======> done
-        training_and_workshop: resolve(__dirname, 'training_and_workshop.html'),
-        professional_services: resolve(__dirname, 'professional_services.js.html'),
+        training_and_workshop: resolve(__dirname, 'training_and_workshop.html'), //======> done
+        professional_services: resolve(__dirname, 'professional_services.js.html'), //======> done
         staff_augmentation: resolve(__dirname, 'staff_augmentation.html'), //======> done
         vacancies: resolve(__dirname, 'vacancies.html'), //======> done
         submit_your_cv: resolve(__dirname, 'submit_your_cv.html'),
