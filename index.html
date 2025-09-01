@@ -86,22 +86,47 @@
             <div class="w-full h-full bg-white bg-opacity-80 absolute top-0 left-0" id="menu-overlay"></div>
             <div class="relative flex flex-col items-center pt-16 space-y-4" id="mobile-menu">
                 <!-- Menu Items -->
-                <a href="#" class="text-xl text-black hover:text-gray-600">Home</a>
+                <a href="./index.html" class="text-xl text-black hover:text-gray-600">Home</a>
 
-                <div class="relative menu-item z-40">
-                    <button class="menu-btn text-xl text-black hover:text-gray-600">
-                        About
+                <a href="./about.html" class="text-xl text-black hover:text-gray-600">Company</a>
+
+                <div class="relative menu-item">
+                    <button class="menu-btn text-xl text-black hover:text-gray-600" aria-expanded="false" data-target="menu-services">
+                        Our Services
                     </button>
-                    <div class="menu-dropdown absolute left-1/2 transform w-[90vw] -translate-x-1/2 mt-2 bg-white shadow-md rounded-md opacity-0 pointer-events-none scale-95 transition-all ease-in-out duration-300">
-                        <a href="#" class="block text-black px-4 py-2 hover:bg-gray-100">Our Story</a>
-                        <a href="#" class="block text-black px-4 py-2 hover:bg-gray-100">Team</a>
-                        <a href="#" class="block text-black px-4 py-2 hover:bg-gray-100">Careers</a>
+                    <div class="menu-dropdown z-40 absolute left-1/2 transform w-[90vw] -translate-x-1/2 mt-2 bg-white shadow-md rounded-md opacity-0 pointer-events-none scale-95 transition-all ease-in-out duration-300">
+                        <a href="./consultancy_services.html" class="block text-black px-4 py-2 hover:bg-gray-100">Consultancy Services</a>
+                        <a href="./training_and_workshop.html" class="block text-black px-4 py-2 hover:bg-gray-100">Training and Workshops</a>
+                        <a href="./professional_services.html" class="block text-black px-4 py-2 hover:bg-gray-100">Professional Services</a>
+                        <a href="./staff_augmentation.html" class="block text-black px-4 py-2 hover:bg-gray-100">Staff Augmentation</a>
                     </div>
                 </div>
 
+                <!-- Careers Dropdown -->
+                <div class="relative menu-item">
+                    <button class="menu-btn text-xl text-black hover:text-gray-600" aria-expanded="false" data-target="menu-careers">
+                        Careers
+                    </button>
+                    <div class="menu-dropdown z-40 absolute left-1/2 transform w-[90vw] -translate-x-1/2 mt-2 bg-white shadow-md rounded-md opacity-0 pointer-events-none scale-95 transition-all ease-in-out duration-300">
+                        <a href="./vacancies.html" class="block text-black px-4 py-2 hover:bg-gray-100">Vacancies</a>
+                        <a href="./submit_your_cv.html" class="block text-black px-4 py-2 hover:bg-gray-100">Submit your CV</a>
+                    </div>
+                </div>
 
-                <a href="#" class="text-xl text-black hover:text-gray-600">Contact</a>
-                <a href="#" class="text-xl text-black hover:text-gray-600">Albums</a>
+                <a href="./markets_we_serve.html" class="text-xl text-black hover:text-gray-600">Markets We Serve</a>
+
+                <a href="./contact.html" class="text-xl text-[#1C5064] bg-[#FDD8AA] px-6 py-2 rounded-full text-[11px] sm:text-[12px] font-medium">Contact Us</a>
+
+                <!-- Language Selector Dropdown -->
+                <div class="relative menu-item">
+                    <button class="menu-btn text-xl text-black hover:text-gray-600" aria-expanded="false" data-target="menu-lang">
+                        <img src="/icons/lang.png" alt="language" class="h-5 w-5 bg-black rounded-full"/>
+                    </button>
+                    <div class="menu-dropdown z-40 absolute left-1/2 transform w-[90vw] -translate-x-1/2 mt-2 bg-white shadow-md rounded-md opacity-0 pointer-events-none scale-95 transition-all ease-in-out duration-300">
+                        <a href="#" class="block text-black px-4 py-2 hover:bg-gray-100">English</a>
+                        <a href="#" class="block text-black px-4 py-2 hover:bg-gray-100">Arabic</a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
