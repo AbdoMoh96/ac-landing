@@ -10,19 +10,16 @@
     <!--  nav starts here -->
     <nav class="navbar absolute w-full p-4 sm:p-5 flex items-center justify-between text-white z-50 text-[13px] sm:text-[14px] font-poppins font-semibold">
         <div id="brand-logo" class="shrink-0">
-            <img src="/logos/brand-logo.png" alt="logo" class="h-8 sm:h-9 lg:h-32 w-auto"/>
+            <img src="/logos/brand-logo.png" alt="logo" class="h-12 sm:h-14 lg:h-32 w-auto"/>
         </div>
 
         <!-- Main menu -->
-        <div id="menu" class="relative flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-1 pr-2 sm:pr-7 max-w-full">
+        <div id="menu" class="relative hidden flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-1 pr-2 sm:pr-7 max-w-full lg:flex">
             <!-- Normal link (closes panel) -->
             <a class="nav-link px-2 py-1 rounded-md" href="./index.html">Home</a>
 
             <!-- Triggers -->
-            <a class="nav-item px-2 py-1 rounded-md focus:outline-none focus:ring-2"
-               href="#"
-               data-target="menu-company"
-               aria-expanded="false">Company</a>
+            <a class="nav-link px-2 py-1 rounded-md" href="./about.html">Company</a>
 
             <a class="nav-item px-2 py-1 rounded-md focus:outline-none focus:ring-2"
                href="#"
@@ -85,11 +82,21 @@
                 </div>
             </div>
         </div>
+
+        <div class="flex flex-col justify-center items-center lg:hidden gap-[5px]">
+            <span class="rounded-sm w-6 h-[2px] bg-white"></span>
+            <span class="rounded-sm w-6 h-[2px] bg-white"></span>
+            <span class="rounded-sm w-6 h-[2px] bg-white"></span>
+        </div>
+
+        <div class="fixed flex flex-col justify-center items-center lg:hidden top-0 left-0 w-full h-full bg-green-200">
+
+        </div>
     </nav>
     <!-- nav ends here-->
 
     <!-- hero section start-->
-    <section class="h-[60vh] sm:h-[70vh] lg:h-[75vh] w-full relative overflow-hidden bg-black">
+    <section class="h-[60vh] sm:h-[80vh] lg:h-[82vh] w-full relative overflow-hidden bg-black">
         <video
                 loop
                 muted
@@ -134,7 +141,7 @@
                     <img src="/icons/quality.png" alt="logo" class="h-14 sm:h-16 w-auto"/>
                     <span class="font-medium text-[32px] sm:text-[40px] lg:text-[48px] text-[#00A1C5] mt-2">Quality</span>
                 </div>
-                <p class="font-normal text-[16px] sm:text-[18px] lg:text-[20px] text-[#1C5064]">
+                <p class="font-normal text-[16px] sm:text-[18px] lg:text-[20px] text-[#1C5064] text-justify">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
             </div>
@@ -144,7 +151,7 @@
                     <img src="/icons/expertise.png" alt="logo" class="h-14 sm:h-16 w-auto"/>
                     <span class="font-medium text-[32px] sm:text-[40px] lg:text-[48px] text-[#00A1C5] mt-2">Expertise</span>
                 </div>
-                <p class="font-normal text-[16px] sm:text-[18px] lg:text-[20px] text-[#1C5064]">
+                <p class="font-normal text-[16px] sm:text-[18px] lg:text-[20px] text-[#1C5064] text-justify">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
             </div>
@@ -154,7 +161,7 @@
                     <img src="/icons/agility.png" alt="logo" class="h-14 sm:h-16 w-auto"/>
                     <span class="font-medium text-[32px] sm:text-[40px] lg:text-[48px] text-[#00A1C5] mt-2">Agility</span>
                 </div>
-                <p class="font-normal text-[16px] sm:text-[18px] lg:text-[20px] text-[#1C5064]">
+                <p class="font-normal text-[16px] sm:text-[18px] lg:text-[20px] text-[#1C5064] text-justify">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
             </div>
@@ -164,7 +171,7 @@
                     <img src="/icons/innovation.png" alt="logo" class="h-14 sm:h-16 w-auto"/>
                     <span class="font-medium text-[32px] sm:text-[40px] lg:text-[48px] text-[#00A1C5] mt-2">Innovation</span>
                 </div>
-                <p class="font-normal text-[16px] sm:text-[18px] lg:text-[20px] text-[#1C5064]">
+                <p class="font-normal text-[16px] sm:text-[18px] lg:text-[20px] text-[#1C5064] text-justify">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
             </div>
