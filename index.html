@@ -82,8 +82,27 @@
             <span class="rounded-sm w-6 h-[2px] bg-white"></span>
         </div>
 
-        <div class="fixed flex flex-col justify-center items-center lg:hidden top-0 left-0 w-full h-full bg-green-200">
+        <div class="fixed flex flex-col justify-center items-center lg:hidden top-0 left-0 w-full h-full bg-white-200 z-50">
+            <div class="w-full h-full bg-white bg-opacity-80 absolute top-0 left-0" id="menu-overlay"></div>
+            <div class="relative flex flex-col items-center pt-16 space-y-4" id="mobile-menu">
+                <!-- Menu Items -->
+                <a href="#" class="text-xl text-black hover:text-gray-600">Home</a>
 
+                <div class="relative menu-item z-40">
+                    <button class="menu-btn text-xl text-black hover:text-gray-600">
+                        About
+                    </button>
+                    <div class="menu-dropdown absolute left-1/2 transform w-[90vw] -translate-x-1/2 mt-2 bg-white shadow-md rounded-md opacity-0 pointer-events-none scale-95 transition-all ease-in-out duration-300">
+                        <a href="#" class="block text-black px-4 py-2 hover:bg-gray-100">Our Story</a>
+                        <a href="#" class="block text-black px-4 py-2 hover:bg-gray-100">Team</a>
+                        <a href="#" class="block text-black px-4 py-2 hover:bg-gray-100">Careers</a>
+                    </div>
+                </div>
+
+
+                <a href="#" class="text-xl text-black hover:text-gray-600">Contact</a>
+                <a href="#" class="text-xl text-black hover:text-gray-600">Albums</a>
+            </div>
         </div>
     </nav>
     <!-- nav ends here-->
@@ -276,5 +295,32 @@
 <!-- footer end -->
 
 <script type="module" src="/src/main.js"></script>
+<script>
+    const menuButtons = document.querySelectorAll('.menu-btn');
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    menuButtons.forEach((button, index) => {
+        const dropdown = menuItems[index].querySelector('.menu-dropdown');
+
+        button.addEventListener('click', () => {
+            const isVisible = dropdown.classList.contains('opacity-100');
+            dropdown.classList.toggle('opacity-100', !isVisible);
+            dropdown.classList.toggle('pointer-events-none', isVisible);
+            dropdown.classList.toggle('scale-100', !isVisible);
+            dropdown.classList.toggle('scale-95', isVisible);
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.menu-item')) {
+            menuItems.forEach(item => {
+                const dropdown = item.querySelector('.menu-dropdown');
+                dropdown.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+                dropdown.classList.remove('opacity-100', 'scale-100');
+            });
+        }
+    });
+
+</script>
 </body>
 </html>
