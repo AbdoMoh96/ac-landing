@@ -11,8 +11,21 @@ if (import.meta.hot) {
 
 /*<==========mobile-menu-logic==============>*/
 
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileMenuOpen = document.getElementById('mobile-menu-open');
+const mobileMenuClose = document.getElementById('mobile-menu-close');
 const menuButtons = document.querySelectorAll('.menu-btn');
 const menuItems = document.querySelectorAll('.menu-item');
+
+mobileMenuOpen.addEventListener('click', () => {
+   mobileMenu.classList.toggle('invisible');
+   mobileMenu.classList.toggle('opacity-0');
+});
+
+mobileMenuClose.addEventListener('click', () => {
+    mobileMenu.classList.toggle('invisible');
+    mobileMenu.classList.toggle('opacity-0');
+});
 
 menuButtons.forEach((button, index) => {
     const dropdown = menuItems[index].querySelector('.menu-dropdown');
