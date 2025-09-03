@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <!--    <link rel="icon" type="image/svg+xml" href="/vite.svg" />-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <title></title>
 </head>
 <body class="bg-black">
@@ -163,37 +164,151 @@
                 </p>
             </div>
 
-            <div class="mt-10 sm:mt-14 flex flex-col lg:flex-row lg:items-start gap-10">
-                <div class="flex-1 flex flex-col justify-between items-center h-[113px] min-w-0">
-                    <img src="/icons/services/CMMI-consultation.png" alt="icon"/>
-                    <span class="font-poppins font-semibold text-[20px] text-[#00A1C5]">CMMI consultation</span>
-                </div>
+            <div class="swiper consultancy-services mt-20">
+                <div class="swiper-wrapper">
+                    <div id="service-0" class="swiper-slide cursor-pointer">
+                        <div class="slide-card flex flex-col justify-between items-center h-[113px] lg:border-l lg:border-[#D9D9D9]">
+                            <img src="/icons/services/CMMI-consultation.png" alt="icon" />
+                            <span class="font-poppins font-semibold text-[20px] text-[#00A1C5]">CMMI consultation</span>
+                        </div>
+                    </div>
 
+                    <div id="service-1" class="swiper-slide cursor-pointer lg:border-l lg:border-[#D9D9D9]">
+                        <div class="slide-card flex flex-col justify-between items-center h-[113px]">
+                            <img src="/icons/services/Testing-consulting-service.png" alt="icon" />
+                            <span class="font-poppins font-semibold text-[20px] text-[#00A1C5]">Testing consulting service</span>
+                        </div>
+                    </div>
 
-                <div class="lg:h-[113px] lg:w-[1px] h-[2px] w-full bg-red bg-[#D9D9D9]"></div>
+                    <div id="service-2" class="swiper-slide">
+                        <div class="slide-card flex flex-col justify-between items-center h-[113px] lg:border-l lg:border-[#D9D9D9]">
+                            <img src="/icons/services/Agile-Coaching.png" alt="icon" />
+                            <span class="font-poppins font-semibold text-[20px] text-[#00A1C5]">Agile Coaching</span>
+                        </div>
+                    </div>
 
-                <div class="flex-1 flex flex-col justify-between items-center h-[113px] min-w-0">
-                    <img src="/icons/services/Testing-consulting-service.png" alt="icon"/>
-                    <span class="font-poppins font-semibold text-[20px] text-[#00A1C5]">Testing consulting service</span>
-                </div>
+                    <!-- ...repeat slides... -->
 
-                <div class="lg:h-[113px] lg:w-[1px] h-[2px] w-full bg-red bg-[#D9D9D9]"></div>
-
-                <div class="flex-1 flex flex-col justify-between items-center h-[113px] min-w-0">
-                    <img src="/icons/services/Agile-Coaching.png" alt="icon"/>
-                    <span class="font-poppins font-semibold text-[20px] text-[#00A1C5]">Agile Coaching</span>
-                </div>
-
-                <div class="lg:h-[113px] lg:w-[1px] h-[2px] w-full bg-red bg-[#D9D9D9]"></div>
-
-                <div class="flex-1 flex flex-col justify-between items-center h-[113px] min-w-0">
-                    <img src="/icons/services/Scaled-Agile-Framework.png" alt="icon"/>
-                    <span class="font-poppins font-semibold text-[20px] text-[#00A1C5]">Scaled Agile Framework(SAFe)</span>
+                    <div id="service-3" class="swiper-slide">
+                        <div class="slide-card flex flex-col justify-between items-center h-[113px] lg:border-l lg:border-[#D9D9D9]">
+                            <img src="/icons/services/Scaled-Agile-Framework.png" alt="icon" />
+                            <span class="font-poppins font-semibold text-[20px] text-[#00A1C5] text-center">Scaled Agile Framework (SAFe)</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
+
     </section>
+
+    <div id="service-panels" class="space-y-6">
+        <!-- CMMI (service-0) -->
+        <div id="panel-service-0" class="service-panel h-0 overflow-hidden transition-[height] duration-300">
+            <section class="rounded-xl p-6 md:p-10 shadow-sm">
+                <div class="grid grid-cols-1 md:grid-cols-12 items-center gap-8">
+                    <!-- Left: text + button -->
+                    <div class="md:col-span-8">
+                        <p class="font-outfit text-[20px] font-normal text-[#1C5064] text-justify">
+                            Eliminate wasting money, time, resources, and opportunities. Every area in your business uses numerous processes every day whether that area is business, managerial, operational, or technical. A well-defined and designed process commands the flow of work and all its possible paths in meeting the goal or objective. Don’t worry about this, we will support your business to define, stabilize, automate your internal processes, practice them effectively, and get a maturity level certificate in CMMI.
+                        </p>
+
+                        <button
+                                class="mt-6 inline-flex items-center justify-center rounded-full px-6 py-3 bg-[#00A1C5] text-white font-semibold shadow hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00A1C5]">
+                            Request Service
+                        </button>
+                    </div>
+
+                    <!-- Right: image -->
+                    <div class="md:col-span-4 flex md:justify-end">
+                        <img
+                                src="/icons/services/CMMI-consultation-description.png"
+                                alt="CMMI model wheel"
+                                class="w-48 h-48 md:w-56 md:h-56 object-contain"
+                        />
+                        <!-- If your asset already has transparent circle, this is enough. -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Testing (service-1) -->
+        <div id="panel-service-1" class="service-panel h-0 overflow-hidden transition-[height] duration-300">
+            <section class="rounded-xl p-6 md:p-10 shadow-sm">
+                <div class="grid grid-cols-1 md:grid-cols-12 items-center gap-8">
+                    <div class="md:col-span-8">
+                        <p class="font-outfit text-[20px] font-normal text-[#1C5064]">
+                            Our Software Testing consultancy service is designed to help you improve governance and projects quality so that you can achieve your business goals and reduce operational risks and cost within your organization. We help you detect and address the existing problems through:
+                        </p>
+                        <ul class="font-outfit text-[20px] font-normal text-[#1C5064] text-justify">
+                            <li>– Testing Strategy Development</li>
+                            <li>– Improvement of overall Testing efficiency and effectiveness</li>
+                            <li>– Implementation of Testing process improvement</li>
+                            <li>– Standardization of reliable Testing processes and best practices</li>
+                            <li>– Maturity Assessment and improvement</li>
+                        </ul>
+                        <button
+                                class="mt-6 inline-flex items-center justify-center rounded-full px-6 py-3 bg-[#00A1C5] text-white font-semibold shadow hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00A1C5]">
+                            Request Service
+                        </button>
+                    </div>
+                    <div class="md:col-span-4 flex md:justify-end">
+                        <img src="/icons/services/Testing-consulting-service-description.png" alt="Testing service graphic"
+                             class="w-48 h-48 md:w-56 md:h-56 object-contain" />
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Agile (service-2) -->
+        <div id="panel-service-2" class="service-panel h-0 overflow-hidden transition-[height] duration-300">
+            <section class=" rounded-xl p-6 md:p-10 shadow-sm">
+                <div class="grid grid-cols-1 md:grid-cols-12 items-center gap-8">
+                    <div class="md:col-span-8">
+                        <p class="font-outfit text-[20px] font-normal text-[#1C5064] text-justify">
+                            We provide you with the support needed to transform your team from individuals who follow plans into an integrated group that makes decisions together, thinking more efficiently, and working more efficiently, accordingly delivering your final product faster, more efficiently, avoiding the rework, and reducing costs.
+                            We provide you with the necessary guidelines to choose and practice the best ways to plan and execute your software development life cycle according to the Agile principles that suit your team and the nature of your projects and thus help you to increase the level of customers satisfaction. We provide technical consultancy in:
+                        </p>
+
+                        <ul class="list-none font-outfit text-[20px] font-normal text-[#1C5064] text-justify">
+                            <li>– Agile Project Management</li>
+                            <li>– Agile Business Analysis</li>
+                            <li>– Agile Development</li>
+                        </ul>
+                        <button
+                                class="mt-6 inline-flex items-center justify-center rounded-full px-6 py-3 bg-[#00A1C5] text-white font-semibold shadow hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00A1C5]">
+                            Request Service
+                        </button>
+                    </div>
+                    <div class="md:col-span-4 flex md:justify-end">
+                        <img src="/icons/services/Agile-Coaching-description.png" alt="Agile coaching graphic"
+                             class="w-48 h-48 md:w-56 md:h-56 object-contain" />
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SAFe (service-3) -->
+        <div id="panel-service-3" class="service-panel h-0 overflow-hidden transition-[height] duration-300">
+            <section class="rounded-xl p-6 md:p-10 shadow-sm">
+                <div class="grid grid-cols-1 md:grid-cols-12 items-center gap-8">
+                    <div class="md:col-span-8">
+                        <p class="font-outfit text-[20px] font-normal text-[#1C5064] text-justify">
+                            There are seven components that make up a proper project management system (People, Tools, Culture, Organization, Planning, Information, and Control). A good project manager must be able to balance all of these components, in addition to the main critical elements (Budget, and Time Frame) due to their significant impact on project success. The perfect start of a successful software project is getting our project management consultancy services.                        </p>
+                        <button
+                                class="mt-6 inline-flex items-center justify-center rounded-full px-6 py-3 bg-[#00A1C5] text-white font-semibold shadow hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00A1C5]">
+                            Request Service
+                        </button>
+                    </div>
+                    <div class="md:col-span-4 flex md:justify-end">
+                        <img src="/icons/services/Scaled-Agile-Framework-description.png" alt="SAFe graphic"
+                             class="w-48 h-48 md:w-56 md:h-56 object-contain" />
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
 
     <section class="px-10 mt-10">
         <div class="flex items-center gap-3">
@@ -373,5 +488,7 @@
 </footer>
 <!-- footer end -->
 <script type="module" src="/src/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="/js/consultancy_services.js"></script>
 </body>
 </html>
