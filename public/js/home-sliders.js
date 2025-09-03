@@ -43,7 +43,7 @@ const servicesSwiper = new Swiper('.services-swiper', {
     spaceBetween: 0,
     fadeEffect: { crossFade: true },
     effect: "fade",
-    allowTouchMove: false,
+    allowTouchMove: true,
     speed: 400,
     resistanceRatio: 0.85,
     on: {
