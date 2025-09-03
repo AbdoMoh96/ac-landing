@@ -26,15 +26,67 @@ sliderNavElements.forEach(el => {
 const swiper = new Swiper('.about-swiper', {
     slidesPerView: 1,
     spaceBetween: 0,
+    fadeEffect: { crossFade: true },
+    effect: "fade",
     allowTouchMove: false,
     speed: 400,
     resistanceRatio: 0.85,
     on: {
         slideChange() {
-            setActiveTab(swiper.activeIndex);
         }
     }
 });
+
+
+const prevBtn = document.getElementById('prevArrow');
+const nextBtn = document.getElementById('nextArrow');
+
+const servicesSwiper = new Swiper('.services-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    fadeEffect: { crossFade: true },
+    effect: "fade",
+    allowTouchMove: true,
+    speed: 400,
+    resistanceRatio: 0.85,
+    on: {
+        init(servicesSwiper) {
+            updateArrows(servicesSwiper);
+        },
+        slideChange(servicesSwiper) {
+            updateArrows(servicesSwiper);
+        }
+    }
+});
+
+
+
+function setEnabled(el, enabled) {
+    if (enabled) {
+        el.classList.remove('grayscale', 'pointer-events-none');
+        el.classList.add('cursor-pointer');
+    } else {
+        el.classList.add('grayscale', 'pointer-events-none');
+        el.classList.remove('cursor-pointer');
+    }
+}
+
+function updateArrows(swiper) {
+    setEnabled(prevBtn, !swiper.isBeginning);
+    setEnabled(nextBtn, !swiper.isEnd);
+}
+
+prevBtn.addEventListener('click', () => {
+    if (!servicesSwiper.isBeginning) servicesSwiper.slidePrev();
+});
+
+nextBtn.addEventListener('click', () => {
+    if (!servicesSwiper.isEnd) servicesSwiper.slideNext();
+});
+
+if (servicesSwiper.initialized) updateArrows(servicesSwiper);
+
+
 
 const tabs = document.querySelectorAll('.slider-nav span');
 tabs.forEach((tab, i) => {
@@ -49,19 +101,5 @@ tabs.forEach((tab, i) => {
         }
     });
 });
-
-function setActiveTab(activeIdx) {
-    tabs.forEach((tab, i) => {
-        if (i === activeIdx) {
-            tab.classList.remove('border-b-transparent');
-        } else {
-            // ensure this class exists at build time (already present in HTML)
-            tab.classList.add('border-b-transparent');
-        }
-    });
-}
-
-// Set initial active underline (slide 0)
-setActiveTab(0);
 
 
