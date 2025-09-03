@@ -33,7 +33,6 @@ const swiper = new Swiper('.about-swiper', {
     resistanceRatio: 0.85,
     on: {
         slideChange() {
-            setActiveTab(swiper.activeIndex);
         }
     }
 });
@@ -51,12 +50,11 @@ const servicesSwiper = new Swiper('.services-swiper', {
     speed: 400,
     resistanceRatio: 0.85,
     on: {
-        init(swiper) {
-            updateArrows(swiper);
+        init(servicesSwiper) {
+            updateArrows(servicesSwiper);
         },
-        slideChange(swiper) {
-            if (typeof setActiveTab === 'function') setActiveTab(swiper.activeIndex);
-            updateArrows(swiper);
+        slideChange(servicesSwiper) {
+            updateArrows(servicesSwiper);
         }
     }
 });
@@ -103,19 +101,5 @@ tabs.forEach((tab, i) => {
         }
     });
 });
-
-function setActiveTab(activeIdx) {
-    tabs.forEach((tab, i) => {
-        if (i === activeIdx) {
-            tab.classList.remove('border-b-transparent');
-        } else {
-            // ensure this class exists at build time (already present in HTML)
-            tab.classList.add('border-b-transparent');
-        }
-    });
-}
-
-// Set initial active underline (slide 0)
-setActiveTab(0);
 
 
