@@ -17,6 +17,7 @@ export default defineConfig({
         submit_your_cv: resolve(__dirname, 'submit_your_cv.html'), //======> done
         markets_we_serve: resolve(__dirname, 'markets_we_serve.html'), //======> done
         contact: resolve(__dirname, 'contact.html'), //======> done
+        view_course: resolve(__dirname, 'view_course.html'), //======> done
       },
     },
   },
