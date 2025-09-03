@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <!--    <link rel="icon" type="image/svg+xml" href="/vite.svg" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+</head>
+<body class="bg-black">
+<main class="container mx-auto relative bg-no-repeat bg-bottom-right bg-[url(/background/victor-small.png)] bg-white">
+    <!--  nav starts here -->
+    <nav class="navbar absolute w-full p-4 sm:p-5 flex items-center justify-between text-white z-50 text-[13px] sm:text-[14px] font-poppins font-semibold">
+        <div id="brand-logo" class="shrink-0">
+            <img src="/logos/brand-logo.png" alt="logo" class="h-12 sm:h-14 lg:h-32 w-auto"/>
+        </div>
+
+        <!-- Main menu -->
+        <div id="menu" class="relative hidden flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-1 pr-2 sm:pr-7 max-w-full lg:flex">
+            <!-- Normal link (closes panel) -->
+            <a class="nav-link px-2 py-1 rounded-md" href="./index.html">Home</a>
+
+            <!-- Triggers -->
+            <a class="nav-link px-2 py-1 rounded-md" href="./about.html">Company</a>
+
+            <a class="nav-item px-2 py-1 rounded-md focus:outline-none focus:ring-2"
+               href="#"
+               data-target="menu-services"
+               aria-expanded="false">Our Services</a>
+
+            <a class="nav-item px-2 py-1 rounded-md focus:outline-none focus:ring-2"
+               href="#"
+               data-target="menu-careers"
+               aria-expanded="false">Careers</a>
+
+            <a class="nav-link px-2 py-1 rounded-md" href="./markets_we_serve.html">Markets We Server</a>
+
+            <!-- Normal link (closes panel) -->
+            <a class="nav-link px-2 py-1 rounded-full pt-[5px] pb-[5px] pr-[23px] pl-[23px] bg-[#FDD8AA] text-[11px] sm:text-[12px] text-[#1C5064] font-medium" href="./contact.html">
+                Contact Us
+            </a>
+
+            <a class="nav-item px-2 py-1 rounded-md focus:outline-none focus:ring-2"
+               href="#"
+               data-target="menu-lang"
+               aria-expanded="false"><img src="/icons/lang.png" alt="language" class="h-5 w-5"/></a>
+
+            <!-- Shared dropdown panel -->
+            <div id="dropdown"
+                 class="absolute top-full left-0 mt-2 hidden opacity-0 -translate-y-2 pointer-events-none transition duration-150 text-[12px] font-normal ease-out w-max max-w-[90vw]">
+                <!-- Menus -->
+
+                <div id="menu-services"
+                     class="menu hidden min-w-[220px] bg-black/55 text-white overflow-hidden">
+                    <ul class="py-2">
+                        <li><a class="block border-b-1 border-b-gray-700 transition-all duration-300 px-4 py-2 hover:text-amber-400" href="./consultancy_services.html">Consultancy Services</a></li>
+                        <li><a class="block border-b-1 border-b-gray-700 transition-all duration-300 px-4 py-2 hover:text-amber-400" href="./training_and_workshop.html">Training and Workshops</a></li>
+                        <li><a class="block border-b-1 border-b-gray-700 transition-all duration-300 px-4 py-2 hover:text-amber-400" href="./professional_services.html">Professional Services</a></li>
+                        <li><a class="block transition-all duration-300 px-4 py-2 hover:text-amber-400" href="./staff_augmentation.html">Staff Augmentation</a></li>
+                    </ul>
+                </div>
+
+                <div id="menu-careers"
+                     class="menu hidden min-w-[220px] bg-black/55 text-white overflow-hidden">
+                    <ul class="py-2">
+                        <li><a class="block border-b-1 border-b-gray-700 transition-all duration-300 px-4 py-2 hover:text-amber-400" href="./vacancies.html">Vacancies</a></li>
+                        <li><a class="block transition-all duration-300 px-4 py-2 hover:text-amber-400" href="./submit_your_cv.html">Submit your CV</a></li>
+                    </ul>
+                </div>
+
+                <div id="menu-lang"
+                     class="menu hidden min-w-[220px] bg-black/55 text-white overflow-hidden">
+                    <ul class="py-2">
+                        <li><a class="block border-b-1 border-b-gray-700 transition-all duration-300 px-4 py-2 hover:text-amber-400" href="#">English</a></li>
+                        <li><a class="block transition-all duration-300 px-4 py-2 hover:text-amber-400" href="#">Arabic</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu-open" class="flex flex-col justify-center items-center lg:hidden gap-[5px]">
+            <span class="rounded-sm w-6 h-[2px] bg-white"></span>
+            <span class="rounded-sm w-6 h-[2px] bg-white"></span>
+            <span class="rounded-sm w-6 h-[2px] bg-white"></span>
+        </div>
+
+        <div id="mobile-menu" class="fixed  flex flex-col justify-center items-center lg:hidden top-0 left-0 w-full h-full bg-white-200 z-50 invisible opacity-0 transition-all duration-300">
+            <div id="mobile-menu-close" class="absolute  rounded-full bg-black top-4 right-4 z-50">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="w-full h-full bg-white bg-opacity-80 absolute top-0 left-0" id="menu-overlay"></div>
+            <div class="relative flex flex-col items-center pt-16 space-y-4">
+                <!-- Menu Items -->
+                <a href="./index.html" class="text-xl text-black hover:text-gray-600">Home</a>
+
+                <a href="./about.html" class="text-xl text-black hover:text-gray-600">Company</a>
+
+                <div class="relative menu-item">
+                    <button class="menu-btn text-xl text-black hover:text-gray-600" aria-expanded="false" data-target="menu-services">
+                        Our Services
+                    </button>
+                    <div class="menu-dropdown z-40 absolute left-1/2 transform w-[90vw] -translate-x-1/2 mt-2 bg-white shadow-md rounded-md opacity-0 pointer-events-none scale-95 transition-all ease-in-out duration-300">
+                        <a href="./consultancy_services.html" class="block text-black px-4 py-2 hover:bg-gray-100">Consultancy Services</a>
+                        <a href="./training_and_workshop.html" class="block text-black px-4 py-2 hover:bg-gray-100">Training and Workshops</a>
+                        <a href="./professional_services.html" class="block text-black px-4 py-2 hover:bg-gray-100">Professional Services</a>
+                        <a href="./staff_augmentation.html" class="block text-black px-4 py-2 hover:bg-gray-100">Staff Augmentation</a>
+                    </div>
+                </div>
+
+                <!-- Careers Dropdown -->
+                <div class="relative menu-item">
+                    <button class="menu-btn text-xl text-black hover:text-gray-600" aria-expanded="false" data-target="menu-careers">
+                        Careers
+                    </button>
+                    <div class="menu-dropdown z-40 absolute left-1/2 transform w-[90vw] -translate-x-1/2 mt-2 bg-white shadow-md rounded-md opacity-0 pointer-events-none scale-95 transition-all ease-in-out duration-300">
+                        <a href="./vacancies.html" class="block text-black px-4 py-2 hover:bg-gray-100">Vacancies</a>
+                        <a href="./submit_your_cv.html" class="block text-black px-4 py-2 hover:bg-gray-100">Submit your CV</a>
+                    </div>
+                </div>
+
+                <a href="./markets_we_serve.html" class="text-xl text-black hover:text-gray-600">Markets We Serve</a>
+
+                <a href="./contact.html" class="text-xl text-[#1C5064] bg-[#FDD8AA] px-6 py-2 rounded-full text-[11px] sm:text-[12px] font-medium">Contact Us</a>
+
+                <!-- Language Selector Dropdown -->
+                <div class="relative menu-item">
+                    <button class="menu-btn text-xl text-black hover:text-gray-600" aria-expanded="false" data-target="menu-lang">
+                        <img src="/icons/lang.png" alt="language" class="h-5 w-5 bg-black rounded-full"/>
+                    </button>
+                    <div class="menu-dropdown z-40 absolute left-1/2 transform w-[90vw] -translate-x-1/2 mt-2 bg-white shadow-md rounded-md opacity-0 pointer-events-none scale-95 transition-all ease-in-out duration-300">
+                        <a href="#" class="block text-black px-4 py-2 hover:bg-gray-100">English</a>
+                        <a href="#" class="block text-black px-4 py-2 hover:bg-gray-100">Arabic</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- nav ends here-->
+
+    <!-- hero section start-->
+    <section class="h-[471px] w-full relative overflow-hidden">
+        <div class="absolute bg-gradient-to-b from-[rgba(1,30,41,0.7)] to-[rgba(102,102,102,0)] w-full h-full z-10 left-0 top-0"></div>
+        <img class=" absolute top-0 h-full w-full" src="/background/training-details-hero.jpg" alt="header-pg" />
+        <div class="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white font-poppins">
+            <span class="block text-center text-[48px] font-outfit font-medium text-white">Game Development with Unity</span>
+        </div>
+    </section>
+    <!--hero section ends here -->
+
+    <div class="space-y-4 p-10">
+        <div class="flex items-center gap-3">
+            <h2 class="font-semibold font-outfit text-[32px] text-[#00A1C5]">About The Course</h2>
+        </div>
+
+        <p class="font-outfit font-normal text-[20px] text-[#1C5064]">
+            Learn to make a high quality 2D and 3D games. Discover game development during design principles and practices geared towards Unity3D and .Net. Learn how to create, acquire, modify and integrate AAA quality assets such as sounds, music, and 3D models. By the end of this course you will have multiple small games which you can play with your friends and family or continue to develop your own custom game. Learn how to Code in C# And How to Create Stunning 3D Games in Unity Game Engine by diving to some small games development
+        </p>
+    </div>
+
+    <!-- Container -->
+    <div class="space-y-4 p-10">
+
+        <div class="grid lg:grid-cols-3 gap-6">
+            <!-- Left column (cards + value) -->
+            <div class="lg:col-span-2 space-y-6">
+                <div class="grid sm:grid-cols-3 gap-6">
+                    <!-- Pre-requisites -->
+                    <div class="rounded-2xl border border-slate-200 bg-[#D9D9D959] p-5 ">
+                        <h3 class="font-outfit font-semibold text-[24px] text-[#00A1C5]">Pre-requisites</h3>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li class="flex gap-2"><span class="mt-2 size-1.5 rounded-full bg-slate-300"></span><span class="text-[16px] font-outfit font-normal text-[#1C5064]">Basic math is required, preferred 3d math.</span></li>
+                            <li class="flex gap-2"><span class="mt-2 size-1.5 rounded-full bg-slate-300"></span><span class="text-[16px] font-outfit font-normal text-[#1C5064]">Basic programming skills with OOP.</span></li>
+                        </ul>
+                    </div>
+                    <!-- Audience -->
+                    <div class="rounded-2xl border border-slate-200 bg-[#D9D9D959] p-5">
+                        <h3 class="font-outfit font-semibold text-[24px] text-[#00A1C5]">Audience</h3>
+                        <p class="text-[16px] font-outfit font-normal text-[#1C5064]">Anyone who has skills in programming and eager to make a game.</p>
+                    </div>
+                    <!-- Training Type -->
+                    <div class="rounded-2xl border border-slate-200 bg-[#D9D9D959] p-5">
+                        <h3 class="font-outfit font-semibold text-[24px] text-[#00A1C5]">Training Type</h3>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li class="flex gap-2"><span class="mt-2 size-1.5 rounded-full bg-slate-300"></span><span class="text-[16px] font-outfit font-normal text-[#1C5064]">Workshop</span></li>
+                            <li class="flex gap-2"><span class="mt-2 size-1.5 rounded-full bg-slate-300"></span><span class="text-[16px] font-outfit font-normal text-[#1C5064]">Online</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Value of Training -->
+                <div class="rounded-2xl border border-slate-200 bg-[#D9D9D959] p-5">
+                    <h3 class="font-outfit font-semibold text-[24px] text-[#00A1C5]">Value of Training</h3>
+                    <p class="text-[16px] font-outfit font-normal text-[#1C5064]">This course introduces games application development using unity, after completing the course, you will be able to:</p>
+                    <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                        <li class="flex gap-2"><span class="mt-2 size-1.5 rounded-full bg-slate-300"></span><span class="text-[16px] font-outfit font-normal text-[#1C5064]">Understand the capabilities of game development using Unity.</span></li>
+                        <li class="flex gap-2"><span class="mt-2 size-1.5 rounded-full bg-slate-300"></span><span class="text-[16px] font-outfit font-normal text-[#1C5064]">Gain excellent knowledge of game creation.</span></li>
+                        <li class="flex gap-2"><span class="mt-2 size-1.5 rounded-full bg-slate-300"></span><span class="text-[16px] font-outfit font-normal text-[#1C5064]">Design, create stunning 3D games.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right column (course includes) -->
+            <div class="rounded-2xl bg-[#1C5064] text-slate-100 p-6">
+                <h3 class="font-semibold text-white mb-4">This Course Includes :</h3>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex gap-3"><span class="mt-2 size-1.5 rounded-full bg-cyan-400"></span><span>Introduction to Game Development</span></li>
+                    <li class="flex gap-3"><span class="mt-2 size-1.5 rounded-full bg-cyan-400"></span><span>Learn Code in C#</span></li>
+                    <li class="flex gap-3"><span class="mt-2 size-1.5 rounded-full bg-cyan-400"></span><span>Object oriented principles</span></li>
+                    <li class="flex gap-3"><span class="mt-2 size-1.5 rounded-full bg-cyan-400"></span><span>Awesome Runner - Infinite runner game</span></li>
+                    <li class="flex gap-3"><span class="mt-2 size-1.5 rounded-full bg-cyan-400"></span><span>Animations in Unity</span></li>
+                    <li class="flex gap-3"><span class="mt-2 size-1.5 rounded-full bg-cyan-400"></span><span>Puzzle Ball Game</span></li>
+                    <li class="flex gap-3"><span class="mt-2 size-1.5 rounded-full bg-cyan-400"></span><span>Create your first Game</span></li>
+                    <li class="flex gap-3"><span class="mt-2 size-1.5 rounded-full bg-cyan-400"></span><span>Light effects in Unity</span></li>
+                </ul>
+
+                <div class="mt-6 flex items-center gap-6 text-sm">
+                    <div class="flex items-center gap-2">
+                        <span class="inline-flex size-6 items-center justify-center rounded-full border border-white/20">•</span>
+                        <span>47 lectures</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="inline-flex size-6 items-center justify-center rounded-full border border-white/20">⏱</span>
+                        <span>10.4h duration</span>
+                    </div>
+                </div>
+
+                <a href="#" class="mt-6 inline-flex w-full items-center justify-center rounded-full bg-sky-500 px-5 py-3 font-semibold text-white hover:bg-sky-600">Apply Now</a>
+            </div>
+        </div>
+
+        <!-- Related Courses -->
+        <h3 class="text-2xl font-extrabold tracking-tight text-slate-900 mt-12 mb-6">Related Courses</h3>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+            <!-- Card 1 -->
+            <article class="rounded-2xl overflow-hidden">
+                <div class="relative">
+                    <img class="rounded-xl h-40 w-full object-cover" src="https://images.unsplash.com/photo-1522199710521-72d69614c702?q=80&w=1200&auto=format&fit=crop" alt="Course cover">
+                    <div class="absolute left-3 top-3 flex gap-2">
+                        <span class="inline-flex items-center rounded-full bg-emerald-500/95 text-white text-[11px] font-semibold px-2.5 py-1">Best Seller</span>
+                        <span class="inline-flex items-center rounded-full bg-fuchsia-500/95 text-white text-[11px] font-semibold px-2.5 py-1">20% OFF</span>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm text-slate-500 mb-1">Kitani Studio</h3>
+                    <a href="#" class="block font-semibold leading-snug text-slate-900 line-clamp-2">Bootcamp Vue.js Web Framework</a>
+                    <p class="mt-2 text-[13px] text-slate-600 line-clamp-2">Learn how to make web application with Vue.js Framework.</p>
+                    <div class="mt-3 flex items-center gap-1">
+                        <div class="flex items-center text-amber-400">
+                            <svg viewBox="0 0 20 20" class="w-4 h-4 fill-current"><path d="M10 15.27 16.18 18l-1.64-7.03L20 6.24l-7.19-.61L10 0 7.19 5.63 0 6.24l5.46 4.73L3.82 18z"/></svg>
+                            <svg viewBox="0 0 20 20" class="w-4 h-4 fill-current"><path d="M10 15.27 16.18 18l-1.64-7.03L20 6.24l-7.19-.61L10 0 7.19 5.63 0 6.24l5.46 4.73L3.82 18z"/></svg>
+                            <svg viewBox="0 0 20 20" class="w-4 h-4 fill-current"><path d="M10 15.27 16.18 18l-1.64-7.03L20 6.24l-7.19-.61L10 0 7.19 5.63 0 6.24l5.46 4.73L3.82 18z"/></svg>
+                            <svg viewBox="0 0 20 20" class="w-4 h-4 fill-current"><path d="M10 15.27 16.18 18l-1.64-7.03L20 6.24l-7.19-.61L10 0 7.19 5.63 0 6.24l5.46 4.73L3.82 18z"/></svg>
+                            <svg viewBox="0 0 20 20" class="w-4 h-4 fill-current opacity-30"><path d="M10 15.27 16.18 18l-1.64-7.03L20 6.24l-7.19-.61L10 0 7.19 5.63 0 6.24l5.46 4.73L3.82 18z"/></svg>
+                        </div>
+                        <span class="text-xs text-slate-500">(1.2K)</span>
+                    </div>
+                    <div class="mt-3 flex items-baseline gap-2">
+                        <span class="text-sky-600 font-bold">$24.92</span>
+                        <span class="text-[13px] text-slate-400 line-through">$32.90</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="rounded-2xl overflow-hidden">
+                <div class="relative">
+                    <img class="rounded-xl h-40 w-full object-cover" src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?q=80&w=1200&auto=format&fit=crop" alt="Course cover">
+                    <div class="absolute left-3 top-3 flex gap-2">
+                        <span class="inline-flex items-center rounded-full bg-emerald-500/95 text-white text-[11px] font-semibold px-2.5 py-1">Best Seller</span>
+                        <span class="inline-flex items-center rounded-full bg-fuchsia-500/95 text-white text-[11px] font-semibold px-2.5 py-1">20% OFF</span>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm text-slate-500 mb-1">Kitani Studio</h3>
+                    <a href="#" class="block font-semibold leading-snug text-slate-900 line-clamp-2">Adobe Illustrator Scratch Course</a>
+                    <p class="mt-2 text-[13px] text-slate-600 line-clamp-2">More than 8yr experience as Illustrator. Learn how to becoming professional Illustrator now..</p>
+                    <div class="mt-3 flex items-center gap-1">
+                        <div class="flex items-center text-amber-400">
+                            <svg viewBox="0 0 20 20" class="w-4 h-4 fill-current"><path d="M10 15.27 16.18 18l-1.64-7.03L20 6.24l-7.19-.61L10 0 7.19 5.63 0 6.24l5.46 4.73L3.82 18z"/></svg>
+                            <svg viewBox="0 0 20 20" class="w-4 h-4 fill-current"><path d="M10 15.27 16.18 18l-1.64-7.03L20 6.24l-7.19-.61L10 0 7.19 5.63 0 6.24l5.46 4.73L3.82 18z"/></svg>
+                            <svg viewBox="0 0 20 20" class="w-4 h-4 fill-current"><path d="M10 15.27 16.18 18l-1.64-7.03L20 6.24l-7.19-.61L10 0 7.19 5.63 0 6.24l5.46 4.73L3.82 18z"/></svg>
+                            <svg viewBox="0 0 20 20" class="w-4 h-4 fill-current"><path d="M10 15.27 16.18 18l-1.64-7.03L20 6.24l-7.19-.61L10 0 7.19 5.63 0 6.24l5.46 4.73L3.82 18z"/></svg>
+                            <svg viewBox="0 0 20 20" class="w-4 h-4 fill-current opacity-30"><path d="M10 15.27 16.18 18l-1.64-7.03L20 6.24l-7.19-.61L10 0 7.19 5.63 0 6.24l5.46 4.73L3.82 18z"/></svg>
+                        </div>
+                        <span class="text-xs text-slate-500">(1.2K)</span>
+                    </div>
+                    <div class="mt-3 flex items-baseline gap-2">
+                        <span class="text-sky-600 font-bold">$24.92</span>
+                        <span class="text-[13px] text-slate-400 line-through">$32.90</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="rounded-2xl overflow-hidden">
+                <div class="relative">
+                    <img class="rounded-xl h-40 w-full object-cover" src="https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1200&auto=format&fit=crop" alt="Course cover">
+                    <div class="absolute left-3 top-3 flex gap-2">
+                        <span class="inline-flex items-center rounded-full bg-emerald-500/95 text-white text-[11px] font-semibold px-2.5 py-1">Best Seller</span>
+                        <span class="inline-flex items-center rounded-full bg-fuchsia-500/95 text-white text-[11px] font-semibold px-2.5 py-1">20% OFF</span>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm text-slate-500 mb-1">Kitani Studio</h3>
+                    <a href="#" class="block font-semibold leading-snug text-slate-900 line-clamp-2">Design Fundamentals</a>
+                    <p class="mt-2 text-[13px] text-slate-600 line-clamp-2">More than 8yr experience as Illustrator. Learn how to becoming professional Illustrator now..</p>
+                    <div class="mt-3 flex items-center gap-1">
+                        <div class="flex items-center text-amber-400">
+                            <svg viewBox="0 0 20 20" class="w-4 h-4 fill-current"><path d="M10 15.27 16.18 18l-1.64-7.03L20 6.24l-7.19-.61L10 0 7.19 5.63 0 6.24l5.46 4.73L3.82 18z"/></svg>
+                            <svg viewBox="0 0 20 20" class="w-4 h-4 fill-current"><path d="M10 15.27 16.18 18l-1.64-7.03L20 6.24l-7.19-.61L10 0 7.19 5.63 0 6.24l5.46 4.73L3.82 18z"/></svg>
+                            <svg viewBox="0 0 20 20" class="w-4 h-4 fill-current"><path d="M10 15.27 16.18 18l-1.64-7.03L20 6.24l-7.19-.61L10 0 7.19 5.63 0 6.24l5.46 4.73L3.82 18z"/></svg>
+                            <svg viewBox="0 0 20 20" class="w-4 h-4 fill-current"><path d="M10 15.27 16.18 18l-1.64-7.03L20 6.24l-7.19-.61L10 0 7.19 5.63 0 6.24l5.46 4.73L3.82 18z"/></svg>
+                            <svg viewBox="0 0 20 20" class="w-4 h-4 fill-current opacity-30"><path d="M10 15.27 16.18 18l-1.64-7.03L20 6.24l-7.19-.61L10 0 7.19 5.63 0 6.24l5.46 4.73L3.82 18z"/></svg>
+                        </div>
+                        <span class="text-xs text-slate-500">(1.2K)</span>
+                    </div>
+                    <div class="mt-3 flex items-baseline gap-2">
+                        <span class="text-sky-600 font-bold">$24.92</span>
+                        <span class="text-[13px] text-slate-400 line-through">$32.90</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="rounded-2xl overflow-hidden">
+                <div class="relative">
+                    <img class="rounded-xl h-40 w-full object-cover" src="https://images.unsplash.com/photo-1503945438517-f65904a52ce6?q=80&w=1200&auto=format&fit=crop" alt="Course cover">
+                    <div class="absolute left-3 top-3 flex gap-2">
+                        <span class="inline-flex items-center rounded-full bg-emerald-500/95 text-white text-[11px] font-semibold px-2.5 py-1">Best Seller</span>
+                        <span class="inline-flex items-center rounded-full bg-fuchsia-500/95 text-white text-[11px] font-semibold px-2.5 py-1">20% OFF</span>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm text-slate-500 mb-1">Kitani Studio</h3>
+                    <a href="#" class="block font-semibold leading-snug text-slate-900 line-clamp-2">Ionic - Build iOS, Android &amp; Web</a>
+                    <p class="mt-2 text-[13px] text-slate-600 line-clamp-2">More than 8yr experience as Illustrator. Learn how to becoming professional Illustrator now..</p>
+                    <div class="mt-3 flex items-center gap-1">
+                        <div class="flex items-center text-amber-400">
+                            <svg viewBox="0 0 20 20" class="w-4 h-4 fill-current"><path d="M10 15.27 16.18 18l-1.64-7.03L20 6.24l-7.19-.61L10 0 7.19 5.63 0 6.24l5.46 4.73L3.82 18z"/></svg>
+                            <svg viewBox="0 0 20 20" class="w-4 h-4 fill-current"><path d="M10 15.27 16.18 18l-1.64-7.03L20 6.24l-7.19-.61L10 0 7.19 5.63 0 6.24l5.46 4.73L3.82 18z"/></svg>
+                            <svg viewBox="0 0 20 20" class="w-4 h-4 fill-current"><path d="M10 15.27 16.18 18l-1.64-7.03L20 6.24l-7.19-.61L10 0 7.19 5.63 0 6.24l5.46 4.73L3.82 18z"/></svg>
+                            <svg viewBox="0 0 20 20" class="w-4 h-4 fill-current"><path d="M10 15.27 16.18 18l-1.64-7.03L20 6.24l-7.19-.61L10 0 7.19 5.63 0 6.24l5.46 4.73L3.82 18z"/></svg>
+                            <svg viewBox="0 0 20 20" class="w-4 h-4 fill-current opacity-30"><path d="M10 15.27 16.18 18l-1.64-7.03L20 6.24l-7.19-.61L10 0 7.19 5.63 0 6.24l5.46 4.73L3.82 18z"/></svg>
+                        </div>
+                        <span class="text-xs text-slate-500">(1.2K)</span>
+                    </div>
+                    <div class="mt-3 flex items-baseline gap-2">
+                        <span class="text-sky-600 font-bold">$24.92</span>
+                        <span class="text-[13px] text-slate-400 line-through">$32.90</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </div>
+
+
+</main>
+<!-- footer start -->
+<footer class="text-white relative p-8 sm:p-12 container mx-auto" style="background: radial-gradient(50% 50% at 50% 50%, #2E657A 0%, #1C5064 100%);">
+    <div class="flex j flex-col flex-wrap lg:flex-row justify-center lg:justify-evenly gap-6">
+        <!-- Brand + Socials -->
+        <div class="flex flex-col items-center md:items-start justify-between relative gap-6 lg:gap-0">
+            <div>
+                <img src="/logos/brand-logo.png" alt="logo" class="h-22 sm:h-22 w-auto"/>
+            </div>
+
+            <!-- Social icons -->
+            <div class=" flex items-center gap-4 md:gap-5 ">
+                <a href="#" aria-label="Facebook" class="opacity-90 hover:opacity-100 transition">
+                    <img src="/icons/facebook.png"  alt="Facebook" class="h-5 sm:h-6 w-auto"/>
+                </a>
+                <a href="#" aria-label="LinkedIn" class="opacity-90 hover:opacity-100 transition">
+                    <img src="/icons/linkedin.png" alt="LinkedIn" class="h-5 sm:h-6 w-auto"/>
+                </a>
+                <a href="#" aria-label="YouTube" class="opacity-90 hover:opacity-100 transition">
+                    <img src="/icons/youtube.png" alt="YouTube" class="h-5 sm:h-6 w-auto"/>
+                </a>
+                <a href="#" aria-label="TikTok" class="opacity-90 hover:opacity-100 transition">
+                    <img src="/icons/tiktok.png" alt="TikTok" class="h-5 sm:h-6 w-auto"/>
+                </a>
+                <a href="#" aria-label="X (Twitter)" class="opacity-90 hover:opacity-100 transition">
+                    <img src="/icons/x.png" alt="X" class="h-5 sm:h-6 w-auto" />
+                </a>
+            </div>
+        </div>
+
+        <!-- Company -->
+        <nav>
+            <h3 class="text-[#FDD8AA] font-semibold">Company</h3>
+            <ul class="mt-3 sm:mt-4 space-y-2 sm:space-y-3 text-[14px] sm:text-[15px]">
+                <li><a href="#" class="hover:text-[#FDD8AA]">About us</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA]">Album</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA]">Markets we serve</a></li>
+            </ul>
+        </nav>
+
+        <!-- Our Services -->
+        <nav>
+            <h3 class="text-[#FDD8AA] font-semibold tracking-wide">Our Services</h3>
+            <ul class="mt-3 sm:mt-4 space-y-2 sm:space-y-3 text-[14px] sm:text-[15px]">
+                <li><a href="#" class="hover:text-[#FDD8AA]">IT Professional Services</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA]">Consulting Services</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA]">Staff Augmentation</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA]">Training Services</a></li>
+            </ul>
+        </nav>
+
+        <!-- Careers -->
+        <nav>
+            <h3 class="text-[#FDD8AA] font-semibold tracking-wide">Careers</h3>
+            <ul class="mt-3 sm:mt-4 space-y-2 sm:space-y-3 text-[14px] sm:text-[15px]">
+                <li><a href="#" class="hover:text-[#FDD8AA]">Vacancies</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA]">Submit your CV</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contact Us -->
+        <div>
+            <h3 class="text-[#FDD8AA] font-semibold tracking-wide">Contact Us</h3>
+            <div class="flex flex-wrap gap-2 items-center my-4 sm:my-5 text-[14px] sm:text-[15px]">
+                <img src="/icons/Phone_fill.png" alt="" class="opacity-90 h-4 w-4" />
+                <a href="tel:+20224738735" class="hover:text-[#FDD8AA]">+202 24 738 735</a>
+                <span class="mx-2 opacity-70">|</span>
+                <a href="tel:+201006150319" class="hover:text-[#FDD8AA]">+201 006 150 319</a>
+            </div>
+            <div class="flex flex-wrap gap-2 items-center text-[14px] sm:text-[15px]">
+                <img src="/icons/Mail.png" alt="" class="opacity-90 h-4 w-4" />
+                <a href="mailto:info@arabcalibers.com" class="hover:text-[#FDD8AA]">info@arabcalibers.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-xs sm:text-sm text-white/80">
+        <p class="w-full text-center mt-8 sm:mt-10">2017 © All Rights Reserved to
+            <a href="#" class="text-[#FDD8AA] hover:text-[#FDD8AA]">Arab Calibers</a>
+        </p>
+    </div>
+
+    <img class="absolute bottom-0 ltr:right-0 rtl:left-0 rtl:scale-x-[-1] max-h-24 sm:max-h-32 md:max-h-40 w-auto" src="/background/footer-pg.png" alt="pg" />
+</footer>
+<!-- footer end -->
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
