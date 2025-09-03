@@ -19,6 +19,7 @@ export default defineConfig({
         contact: resolve(__dirname, 'contact.html'), //======> done
         view_course: resolve(__dirname, 'view_course.html'), //======> done
         request_service: resolve(__dirname, 'request_service.html'), //======> done
+        course_enroll: resolve(__dirname, 'course_enroll.html'), //======> done
       },
     },
   },
