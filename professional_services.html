@@ -152,13 +152,8 @@
 
         <div class="flex justify-around flex-col lg:flex-row">
             <!-- LEFT -->
-            <div id="leftCard" class="w-[464px] h-[386px] relative bg-white rounded-3xl shadow-[0px_4px_3.9px_2px_#0000001C]">
-                <!-- pale rail -->
-                <span class="absolute left-3 top-6 bottom-6 w-1 bg-cyan-100 rounded-full"></span>
-                <!-- animated indicator -->
-                <span id="activeTick"
-                      class="absolute left-3 w-1 h-12 bg-cyan-500 rounded-full transition-transform duration-300 ease-out"
-                      style="transform: translateY(0px)"></span>
+            <div id="leftCard" dir="rtl" class="w-[464px] h-[386px] relative bg-white rounded-3xl shadow-[0px_4px_3.9px_2px_#0000001C] custom-scroll-bar overflow-y-scroll">
+           <div dir="ltr" class="">
 
                 <ul id="serviceList" class="space-y-6 ml-6 py-4">
                     <li data-target="#pane-taas" class="service-item group flex items-center gap-4 cursor-pointer h-17">
@@ -191,6 +186,7 @@
                     </li>
                 </ul>
             </div>
+           </div>
 
             <!-- RIGHT (all panes present; we just hide/show) -->
             <div class="bg-white w-[835px] h-[386px] rounded-3xl p-6 md:p-10 shadow-[0px_4px_3.9px_2px_#0000001C]">
