@@ -1,15 +1,5 @@
     const items = [...document.querySelectorAll('.service-item')];
     const panes = [...document.querySelectorAll('.pane')];
-    const tick  = document.getElementById('activeTick');
-    const leftCard = document.getElementById('leftCard');
-
-    function moveIndicatorTo(el){
-    const cardTop = leftCard.getBoundingClientRect().top;
-    const r = el.getBoundingClientRect();
-    const y = (r.top - cardTop) + (r.height - tick.offsetHeight)/2;
-    tick.style.transform = `translateY(${y}px)`;
-    tick.style.height = r.height + 'px';
-}
 
     function showPane(selector){
     panes.forEach(p => p.classList.add('hidden'));
