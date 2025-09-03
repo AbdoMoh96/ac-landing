@@ -9,8 +9,12 @@ const sliderNavUnderLine = (el) => {
   sliderNavElements.forEach((item) => {
       if (item.innerHTML === selectedElement) {
          item.classList.remove('border-b-transparent');
+         item.classList.remove('text-[#ACACAC]');
+         item.classList.add('text-[#1C5064]');
       }else{
           item.classList.add('border-b-transparent');
+          item.classList.add('text-[#ACACAC]');
+          item.classList.remove('text-[#1C5064]');
       }
   })
 };
