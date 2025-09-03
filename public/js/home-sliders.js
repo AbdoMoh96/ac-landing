@@ -26,6 +26,8 @@ sliderNavElements.forEach(el => {
 const swiper = new Swiper('.about-swiper', {
     slidesPerView: 1,
     spaceBetween: 0,
+    fadeEffect: { crossFade: true },
+    effect: "fade",
     allowTouchMove: false,
     speed: 400,
     resistanceRatio: 0.85,
@@ -35,6 +37,23 @@ const swiper = new Swiper('.about-swiper', {
         }
     }
 });
+
+const servicesSwiper = new Swiper('.services-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    fadeEffect: { crossFade: true },
+    effect: "fade",
+    allowTouchMove: false,
+    speed: 400,
+    resistanceRatio: 0.85,
+    on: {
+        slideChange() {
+            setActiveTab(swiper.activeIndex);
+        }
+    }
+});
+
+
 
 const tabs = document.querySelectorAll('.slider-nav span');
 tabs.forEach((tab, i) => {
