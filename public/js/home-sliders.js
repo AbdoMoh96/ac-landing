@@ -102,4 +102,25 @@ tabs.forEach((tab, i) => {
     });
 });
 
+const customersSwiper = new Swiper(".customers", {
+    // your base options
+    lazy: { loadOnTransitionStart: true },
+    loop: true,
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+    },
+    simulateTouch: true,
+    grabCursor: true,
+    speed: 600,
+
+    breakpoints: {
+        0:   { slidesPerView: 1 },
+        640: { slidesPerView: 2 },
+        700: { slidesPerView: 3 },
+        1024:{ slidesPerView: 4 }
+    }
+});
+
 
