@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <!--    <link rel="icon" type="image/svg+xml" href="/vite.svg" />-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <title></title>
 </head>
 <body class="bg-black">
@@ -162,25 +163,109 @@
                     Arab Calibers provides the service of recruiting and outsourcing the best human resources specialized in software engineering to work within the various institutions through multi-contracting methods. We deliver the best calibers that make a difference in your business to assist you in achieving your corporation’s goals faster and more efficiently                </p>
             </div>
 
-            <div class="mt-10 sm:mt-14 flex gap-42 justify-center items-center flex-col lg:flex-row lg:items-start gap-10">
-                <div class="flex flex-col justify-between items-center min-w-0">
-                    <img src="/icons/outsourcing.png" alt="icon"/>
-                    <span class="font-poppins font-semibold text-[28px] text-[#1C5064]">Outsourcing</span>
-                </div>
+            <div class="swiper staff-aug-services mt-20 mx-auto">
+                <div class="swiper-wrapper ">
+                    <div id="service-0" class="swiper-slide cursor-pointer">
+                        <div class="slide-card flex flex-col justify-between items-center">
+                            <img src="/icons/outsourcing.png" alt="icon"/>
+                            <span class="font-poppins font-semibold text-[28px] text-[#1C5064]">Outsourcing</span>
+                        </div>
+                    </div>
 
-                <div class=" flex flex-col justify-between items-center min-w-0">
-                    <img src="/icons/Recruitment.png" alt="icon"/>
-                    <span class="font-poppins font-semibold text-[28px] text-[#1C5064]">Recruitment</span>
-                </div>
+                    <div id="service-1" class="swiper-slide cursor-pointer">
+                        <div class="slide-card flex flex-col justify-between items-center">
+                            <img src="/icons/Recruitment.png" alt="icon"/>
+                            <span class="font-poppins font-semibold text-[28px] text-[#1C5064]">Recruitment</span>
+                        </div>
+                    </div>
 
-                <div class="flex flex-col justify-between items-center min-w-0">
-                    <img src="/icons/ODC.png" alt="icon"/>
-                    <span class="font-poppins font-semibold text-[28px] text-[#1C5064]">ODC</span>
+                    <div id="service-2" class="swiper-slide">
+                        <div class="slide-card flex flex-col justify-between items-center">
+                            <img src="/icons/ODC.png" alt="icon"/>
+                            <span class="font-poppins font-semibold text-[28px] text-[#1C5064]">ODC</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
         </div>
     </section>
+
+    <div id="service-panels" class="space-y-6">
+        <!-- CMMI (service-0) -->
+        <div id="panel-service-0" class="service-panel h-0 overflow-hidden transition-[height] duration-300">
+            <section class="rounded-xl p-6 md:p-10 shadow-sm">
+                <div class="grid grid-cols-1 md:grid-cols-12 items-center gap-8">
+                    <!-- Left: text + button -->
+                    <div class="md:col-span-8">
+                        <p class="font-outfit text-[20px] font-normal text-[#1C5064] text-justify">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+
+                        <button
+                                class="mt-6 inline-flex items-center justify-center rounded-full px-6 py-3 bg-[#00A1C5] text-white font-semibold shadow hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00A1C5]">
+                            Request Service
+                        </button>
+                    </div>
+
+                    <!-- Right: image -->
+                    <div class="md:col-span-4 flex md:justify-end">
+                        <img
+                                src="/icons/services/outsourcing-description.png"
+                                alt="CMMI model wheel"
+                                class="object-contain"
+                        />
+                        <!-- If your asset already has transparent circle, this is enough. -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Testing (service-1) -->
+        <div id="panel-service-1" class="service-panel h-0 overflow-hidden transition-[height] duration-300">
+            <section class="rounded-xl p-6 md:p-10 shadow-sm">
+                <div class="grid grid-cols-1 md:grid-cols-12 items-center gap-8">
+                    <div class="md:col-span-8">
+                        <p class="font-outfit text-[20px] font-normal text-[#1C5064]">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                        <button
+                                class="mt-6 inline-flex items-center justify-center rounded-full px-6 py-3 bg-[#00A1C5] text-white font-semibold shadow hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00A1C5]">
+                            Request Service
+                        </button>
+                    </div>
+                    <div class="md:col-span-4 flex md:justify-end">
+                        <img src="/icons/services/recrutment-description.png" alt="Testing service graphic"
+                             class=" object-contain" />
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Agile (service-2) -->
+        <div id="panel-service-2" class="service-panel h-0 overflow-hidden transition-[height] duration-300">
+            <section class=" rounded-xl p-6 md:p-10 shadow-sm">
+                <div class="grid grid-cols-1 md:grid-cols-12 items-center gap-8">
+                    <div class="md:col-span-8">
+                        <p class="font-outfit text-[20px] font-normal text-[#1C5064] text-justify">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+
+                        <button
+                                class="mt-6 inline-flex items-center justify-center rounded-full px-6 py-3 bg-[#00A1C5] text-white font-semibold shadow hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00A1C5]">
+                            Request Service
+                        </button>
+                    </div>
+                    <div class="md:col-span-4 flex md:justify-end">
+                        <img src="/icons/services/odc-description.png" alt="Agile coaching graphic"
+                             class="object-contain" />
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
 
     <section class="px-10 mt-10">
         <div class="flex items-center gap-3">
@@ -360,5 +445,7 @@
 </footer>
 <!-- footer end -->
 <script type="module" src="/src/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="/js/staff-aug.js"></script>
 </body>
 </html>
