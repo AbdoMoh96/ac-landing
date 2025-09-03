@@ -11,3 +11,43 @@
 .underline-input{
     @apply border-0 border-b border-slate-300 bg-transparent focus:border-cyan-500 focus:ring-0;
 }
+
+.custom-scroll-bar {
+    /* Enable scrolling */
+    overflow-y: auto;
+}
+
+/* Scrollbar width */
+.custom-scroll-bar::-webkit-scrollbar {
+    width: 8px; /* adjust size */
+}
+
+/* Remove arrows */
+.custom-scroll-bar::-webkit-scrollbar-button {
+    display: none;
+    height: 0;
+    width: 0;
+}
+
+/* Scrollbar track (background) */
+.custom-scroll-bar::-webkit-scrollbar-track {
+    background: #cceaf5; /* light blue */
+    border-radius: 9999px; /* fully rounded */
+}
+
+/* Scrollbar thumb (draggable part) */
+.custom-scroll-bar::-webkit-scrollbar-thumb {
+    background: #00bcd4; /* cyan/teal */
+    border-radius: 9999px; /* fully rounded */
+}
+
+/* Hover effect */
+.custom-scroll-bar::-webkit-scrollbar-thumb:hover {
+    background: #0097a7; /* darker cyan */
+}
+
+/* Firefox support */
+.custom-scroll-bar {
+    scrollbar-width: thin;
+    scrollbar-color: #00bcd4 #cceaf5;
+}
