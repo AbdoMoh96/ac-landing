@@ -160,10 +160,10 @@
     <section class="lg:px-20 py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20 px-5">
 
         <!-- Left rail: roles list -->
-        <section aria-label="Open Roles" class="lg:col-span-5 space-y-5">
+        <section id="roles-container" class="lg:col-span-5 space-y-5 max-h-[70vh] overflow-y-auto pr-2">
             <!-- Role card -->
-            <article class="rounded-2xl p-5 border border-[#1797C5]">
-                <h3 class="font-semibold text-brand-800 text-[#1797C5] text-justify">Full Stack Developer</h3>
+            <article class="rounded-2xl p-5 border "  data-role-id="full-stack">
+                <h3 class="font-semibold text-brand-800  text-justify">Full Stack Developer</h3>
                 <div class="mt-2 flex flex-wrap gap-2 text-xs">
                     <span class="px-2 py-1 rounded-full bg-slate-100 text-slate-700">Mid-Level</span>
                     <span class="px-2 py-1 rounded-full bg-slate-100 text-slate-700">Chennai</span>
@@ -174,7 +174,7 @@
                 </p>
             </article>
 
-            <article class="rounded-2xl p-5">
+            <article class="rounded-2xl p-5 rounded-2xl p-5 border"  data-role-id="react-developer">
                 <h3 class="font-semibold text-slate-800">React Developer</h3>
                 <div class="mt-2 flex flex-wrap gap-2 text-xs">
                     <span class="px-2 py-1 rounded-full bg-slate-100">Mid-Level</span>
@@ -225,7 +225,7 @@
 
         <!-- Right: highlighted role -->
         <section aria-label="Full Stack Developer Details" class="lg:col-span-7">
-            <div class="rounded-2xl  p-6">
+            <div class="rounded-2xl p-6 transition-opacity duration-300 ease-out opacity-0 invisible pointer-events-none ease-out overflow-hidden" data-role-panel="full-stack" aria-hidden="true">
                 <div class="flex items-center justify-between gap-4">
                     <h2 class="text-xl font-bold text-slate-800">Full Stack Developer</h2>
                     <div class="hidden sm:flex flex-wrap gap-2 text-xs">
@@ -240,6 +240,52 @@
                         <h3 class="font-semibold text-slate-900">Primary Responsibility:</h3>
                         <p class="mt-1 text-justify">
                             Designing and implementing user interfaces using HTML, CSS, and JavaScript frameworks like React or Angular. Building and maintaining server‑side application logic, databases, and APIs using technologies such as Node.js, Python, Ruby, or Java. Designing, implementing, and managing databases (SQL or NoSQL) to ensure data integrity and efficient retrieval. Using version control systems like Git to manage code changes and collaborate with other developers. Implementing security best practices to protect applications from vulnerabilities and threats. Automating deployment processes and managing CI/CD pipelines to streamline development and release cycles. Working with cross‑functional teams to deliver high‑quality software.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold text-slate-900">Job Specification:</h3>
+                        <ul class="mt-2 list-disc pl-6 space-y-1">
+                            <li>Proficiency in front‑end technologies HTML, CSS, JavaScript frameworks like React or Angular.</li>
+                            <li>Proficiency in back‑end technologies: Node.js, Python, Ruby, Java, etc.</li>
+                            <li>Experience in designing and managing databases (SQL and NoSQL).</li>
+                            <li>Strong knowledge of version control systems, particularly Git.</li>
+                            <li>Experience in managing and collaborating on code repositories.</li>
+                            <li>Knowledge of web security best practices and performance optimization.</li>
+                            <li>Excellent collaboration skills and ability to explain technical concepts to non‑technical stakeholders.</li>
+                        </ul>
+                    </div>
+
+                    <div class="flex flex-col gap-10">
+                        <p><span class="font-semibold">Employment Type:</span> Full‑time</p>
+                        <p><span class="font-semibold">Work Place Type:</span> Hybrid</p>
+                        <p><span class="font-semibold">Salary:</span> Commensurate with experience and skills</p>
+                        <p><span class="font-semibold">Experience Required:</span> Minimum 3 Years</p>
+                        <p><span class="font-semibold">Job Location:</span> Chennai, Madurai, Coimbatore</p>
+                    </div>
+
+                    <button type="submit"
+                            class="inline-flex items-center justify-center rounded-full px-8 py-3 font-semibold text-white bg-cyan-600 hover:bg-cyan-700 transition">
+                        Apply
+                    </button>
+                </div>
+            </div>
+
+            <div class="rounded-2xl p-6 transition-opacity duration-300 ease-out opacity-0 invisible pointer-events-none ease-out overflow-hidden" data-role-panel="react-developer" aria-hidden="true">
+                <div class="flex items-center justify-between gap-4">
+                    <h2 class="text-xl font-bold text-slate-800">React Developer</h2>
+                    <div class="hidden sm:flex flex-wrap gap-2 text-xs">
+                        <span class="px-2 py-1 rounded-full bg-slate-100">Mid-Level</span>
+                        <span class="px-2 py-1 rounded-full bg-slate-100">Chennai</span>
+                        <span class="px-2 py-1 rounded-full bg-slate-100">Madurai</span>
+                    </div>
+                </div>
+
+                <div class="mt-4 space-y-5 text-sm leading-6 text-slate-700">
+                    <div>
+                        <h3 class="font-semibold text-slate-900">Primary Responsibility:</h3>
+                        <p class="mt-1 text-justify">
+                            Designing and implementing user interfaces using HTML, CSS, and JavaScript frameworks like React or Angular.
                         </p>
                     </div>
 
@@ -401,5 +447,141 @@
 <!-- footer end -->
 <script type="module" src="/src/main.js"></script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+    // ===== Careers Role Switcher =====
+    const applyForm = document.querySelector('#apply');
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const rolesContainer = document.querySelector('#roles-container');
+        if (!rolesContainer) return;
+
+        const roleCards = Array.from(rolesContainer.querySelectorAll('[data-role-id]'));
+        const rolePanels = Array.from(document.querySelectorAll('[data-role-panel]'));
+        let currentId = null;
+        let isAnimating = false;
+        const getPanel = (id) => rolePanels.find(p => p.getAttribute('data-role-panel') === id);
+        const fadeOutPanel = (panel) => new Promise((resolve) => {
+            if (!panel) return resolve();
+            if (panel.classList.contains('invisible')) return resolve();
+
+            const onEnd = (e) => {
+                if (e.propertyName !== 'opacity' && e.propertyName !== 'max-height') return;
+                panel.removeEventListener('transitionend', onEnd);
+
+                panel.classList.add('invisible', 'pointer-events-none', '!p-0');
+                panel.setAttribute('aria-hidden', 'true');
+                resolve();
+            };
+            panel.addEventListener('transitionend', onEnd);
+            panel.style.maxHeight = panel.scrollHeight + 'px'; // set current height
+            requestAnimationFrame(() => {
+                panel.classList.add('opacity-0');
+                panel.style.maxHeight = '0px';
+            });
+        });
+
+        const fadeInPanel = (panel) => new Promise((resolve) => {
+            if (!panel) return resolve();
+
+            const onEnd = (e) => {
+                if (e.propertyName !== 'opacity' && e.propertyName !== 'max-height') return;
+                panel.removeEventListener('transitionend', onEnd);
+
+                panel.style.maxHeight = ''; // clear inline style so it auto-sizes
+                resolve();
+            };
+
+            panel.classList.remove('invisible', 'pointer-events-none', '!p-0');
+            panel.setAttribute('aria-hidden', 'false');
+            panel.style.maxHeight = '0px';
+
+            requestAnimationFrame(() => {
+                panel.addEventListener('transitionend', onEnd);
+                panel.classList.remove('opacity-0');
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+            });
+        });
+
+        const setSelectedCard = (id) => {
+            roleCards.forEach(card => {
+                const isActive = card.getAttribute('data-role-id') === id;
+
+                card.classList.toggle('border', isActive);
+                card.classList.toggle('border-[#1797C5]', isActive);
+
+                // update heading colors
+                const heading = card.querySelector('h3');
+                if (heading) {
+                    heading.classList.toggle('text-brand-800', isActive);
+                    heading.classList.toggle('text-[#1797C5]', isActive);
+                    heading.classList.toggle('text-slate-800', !isActive);
+                }
+
+                card.querySelectorAll('span').forEach(span => {
+                    span.classList.toggle('text-slate-700', isActive);
+                });
+
+                card.setAttribute('aria-selected', String(isActive));
+                card.tabIndex = isActive ? 0 : -1;
+            });
+        };
+
+        const switchTo = async (id) => {
+            if (isAnimating || id === currentId) return;
+            isAnimating = true;
+
+            const nextPanel = getPanel(id);
+            const currentPanel = getPanel(currentId);
+
+            await fadeOutPanel(currentPanel);
+            await fadeInPanel(nextPanel);
+
+            currentId = id;
+            setSelectedCard(id);
+            isAnimating = false;
+        };
+
+        rolesContainer.addEventListener('click', (e) => {
+            const card = e.target.closest('[data-role-id]');
+            if (!card || !rolesContainer.contains(card)) return;
+            switchTo(card.getAttribute('data-role-id'));
+        });
+
+        rolesContainer.addEventListener('keydown', (e) => {
+            if (e.key !== 'Enter' && e.key !== ' ') return;
+            const card = e.target.closest('[data-role-id]');
+            if (!card) return;
+            e.preventDefault();
+            switchTo(card.getAttribute('data-role-id'));
+        });
+
+        roleCards.forEach(card => {
+            if (!card.hasAttribute('tabindex')) card.tabIndex = 0;
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-pressed', 'false');
+        });
+
+        if (roleCards.length) {
+            const firstId = roleCards[0].getAttribute('data-role-id');
+            // Immediately show the first panel without animation flicker
+            const firstPanel = getPanel(firstId);
+            if (firstPanel) {
+                firstPanel.classList.remove('invisible', 'pointer-events-none', 'opacity-0');
+                firstPanel.setAttribute('aria-hidden', 'false');
+                currentId = firstId;
+                setSelectedCard(firstId);
+            }
+        }
+    });
+
+    const showApplyForm = () => {
+        applyForm.classList.remove('hidden');
+    };
+
+    const hideApplyForm = () => {
+        applyForm.classList.add('hidden');
+    }
+
+</script>
 </body>
 </html>
