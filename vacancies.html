@@ -325,14 +325,14 @@
             <form class="mt-6 rounded-2xl bg-[#D9D9D933] border border-slate-200 shadow-card p-6 space-y-4 h-50" action="#" method="POST">
                 <div class="grid md:grid-cols-3 gap-6 items-end">
                     <!-- Name -->
-                    <label class="md:col-span-1 block">
+                    <label class="md:col-span-1 block flex flex-col justify-between h-full">
                         <span class="block text-sm font-medium text-slate-700">Name</span>
                         <input type="text" name="name" required
                                class="mt-2 w-full underline-input focus:outline-none" placeholder="Your full name" />
                     </label>
 
                     <!-- File upload -->
-                    <div class="md:col-span-1">
+                    <div class="md:col-span-1 flex flex-col justify-between h-full">
                         <span class="block text-sm font-medium text-slate-700">Resume (DOC or PDF)</span>
                         <label for="resume" class="mt-2 block border-2 border-dashed border-slate-300 rounded-xl p-4 text-center hover:border-brand-400 cursor-pointer">
                             <input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx" class="hidden" />
@@ -344,13 +344,13 @@
                     </div>
 
                     <!-- reCAPTCHA -->
-                    <div class="md:col-span-1 relative">
+                    <div class="md:col-span-1 relative flex flex-col justify-between h-full">
                         <span class="block text-sm font-medium text-slate-700">Verification</span>
                         <div class="mt-2">
                             <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
                         </div>
                         <button type="submit"
-                                class="inline-flex items-center absolute right-0 mt-2 justify-center rounded-full px-8 py-3 font-semibold text-white bg-cyan-600 hover:bg-cyan-700 transition">
+                                class="inline-flex items-center absolute right-0 mt-2 mt-6 justify-center rounded-full px-6 py-2 bg-[#00A1C5] text-white font-semibold shadow hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00A1C5]">
                             Send
                         </button>
                     </div>
