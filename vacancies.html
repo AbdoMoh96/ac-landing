@@ -265,6 +265,7 @@
                     </div>
 
                     <button type="submit"
+                            onclick="showApplyForm()"
                             class="inline-flex items-center justify-center rounded-full px-8 py-3 font-semibold text-white bg-cyan-600 hover:bg-cyan-700 transition">
                         Apply
                     </button>
@@ -311,6 +312,7 @@
                     </div>
 
                     <button type="submit"
+                            onclick="showApplyForm()"
                             class="inline-flex items-center justify-center rounded-full px-8 py-3 font-semibold text-white bg-cyan-600 hover:bg-cyan-700 transition">
                         Apply
                     </button>
@@ -319,7 +321,7 @@
         </section>
 
         <!-- Application form -->
-        <section id="apply" aria-label="Application Form" class="lg:col-span-12 mb-42 lg:mb-0">
+        <section id="apply" aria-label="Application Form" class="lg:col-span-12 mb-42 lg:mb-0 hidden">
             <form class="mt-6 rounded-2xl bg-[#D9D9D933] border border-slate-200 shadow-card p-6 space-y-4 h-50" action="#" method="POST">
                 <div class="grid md:grid-cols-3 gap-6 items-end">
                     <!-- Name -->
@@ -451,6 +453,15 @@
     // ===== Careers Role Switcher =====
     const applyForm = document.querySelector('#apply');
 
+
+    const showApplyForm = () => {
+        applyForm.classList.remove('hidden');
+    };
+
+    const hideApplyForm = () => {
+        applyForm.classList.add('hidden');
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
         const rolesContainer = document.querySelector('#roles-container');
         if (!rolesContainer) return;
@@ -461,6 +472,7 @@
         let isAnimating = false;
         const getPanel = (id) => rolePanels.find(p => p.getAttribute('data-role-panel') === id);
         const fadeOutPanel = (panel) => new Promise((resolve) => {
+            hideApplyForm();
             if (!panel) return resolve();
             if (panel.classList.contains('invisible')) return resolve();
 
@@ -573,14 +585,6 @@
             }
         }
     });
-
-    const showApplyForm = () => {
-        applyForm.classList.remove('hidden');
-    };
-
-    const hideApplyForm = () => {
-        applyForm.classList.add('hidden');
-    }
 
 </script>
 </body>
