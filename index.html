@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<!--    apply on arabic only-->
+<!--    <style>-->
+<!--        .swiper{-->
+<!--            direction: rtl !important;-->
+<!--        }-->
+<!--    </style>-->
     <title></title>
 </head>
 <body class="bg-black">
@@ -266,9 +272,9 @@
                                 </div>
                             </div>
 
-                            <div class="absolute flex gap-10 right-5/12 lg:right-3/12 bottom-1 lg:bottom-20">
-                                <img id="prevArrow" src="/home/slider-arrow-left.png" alt="slider-arrow-left" class="w-[37px] h-[36px] cursor-pointer"/>
-                                <img id="nextArrow" src="/home/slider-arrow-right.png" alt="slider-arrow-left" class="w-[37px] h-[36px] cursor-pointer"/>
+                            <div class="absolute flex gap-10 ltr:right-5/121 ltr:lg:right-3/12 rtl:left-5/121 rtl:lg:left-3/12 bottom-1 lg:bottom-20">
+                                <img id="prevArrow" src="/home/slider-arrow-left.png" alt="slider-arrow-left" class="w-[37px] h-[36px] cursor-pointer rtl:scale-x-[-1]"/>
+                                <img id="nextArrow" src="/home/slider-arrow-right.png" alt="slider-arrow-left" class="w-[37px] h-[36px] cursor-pointer rtl:scale-x-[-1]"/>
                             </div>
 
                         </div>
