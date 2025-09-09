@@ -50,3 +50,9 @@ document.addEventListener('click', (e) => {
 });
 
 /*<==========mobile-menu-logic-end==============>*/
+
+/*<===========arabic=switch=script================>*/
+// setTimeout(() => {
+//     document.getElementsByTagName('html')[0].dir = 'rtl';
+// }, 500);
+/*<===========arabic=switch=script=end============>*/

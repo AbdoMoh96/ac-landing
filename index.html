@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<!--    apply on arabic only-->
+<!--    <style>-->
+<!--        .swiper{-->
+<!--            direction: rtl !important;-->
+<!--        }-->
+<!--    </style>-->
     <title></title>
 </head>
 <body class="bg-black">
@@ -164,9 +170,9 @@
     <!-- about us section start -->
     <section class="min-h-[24vh] sm:min-h-[28vh] md:min-h-[30vh]">
         <nav class="flex slider-nav flex-wrap justify-center sm:justify-around items-center gap-6 sm:gap-10 pt-10 sm:pt-12 text-[14px] sm:text-[15px] mb-15">
-            <span class="w-28 font-poppins font-semibold lg:text-[20px] text-[#1C5064] sm:w-32 text-center pb-2 sm:pb-4 border-b-2 transition-all duration-300">About Us</span>
-            <span class="w-28 font-poppins font-semibold lg:text-[20px] text-[#ACACAC] sm:w-32 text-center pb-2 sm:pb-4 border-b-2 border-b-transparent transition-all duration-300">Our Services</span>
-            <span class="w-28 font-poppins font-semibold lg:text-[20px] text-[#ACACAC] sm:w-32 text-center pb-2 sm:pb-4 border-b-2 border-b-transparent transition-all duration-300">Markets</span>
+            <span class="w-28 font-poppins font-semibold lg:text-[20px] text-[#1C5064] sm:w-32 text-center pb-2 sm:pb-4 border-b-2 transition-all duration-300 cursor-pointer">About Us</span>
+            <span class="w-28 font-poppins font-semibold lg:text-[20px] text-[#ACACAC] sm:w-32 text-center pb-2 sm:pb-4 border-b-2 border-b-transparent transition-all duration-300 cursor-pointer">Our Services</span>
+            <span class="w-28 font-poppins font-semibold lg:text-[20px] text-[#ACACAC] sm:w-32 text-center pb-2 sm:pb-4 border-b-2 border-b-transparent transition-all duration-300 cursor-pointer">Markets</span>
         </nav>
 
         <!-- Swiper -->
@@ -266,9 +272,9 @@
                                 </div>
                             </div>
 
-                            <div class="absolute flex gap-10 right-5/12 lg:right-3/12 bottom-1 lg:bottom-20">
-                                <img id="prevArrow" src="/home/slider-arrow-left.png" alt="slider-arrow-left" class="w-[37px] h-[36px] cursor-pointer"/>
-                                <img id="nextArrow" src="/home/slider-arrow-right.png" alt="slider-arrow-left" class="w-[37px] h-[36px] cursor-pointer"/>
+                            <div class="absolute flex gap-10 ltr:right-5/121 ltr:lg:right-3/12 rtl:left-5/121 rtl:lg:left-3/12 bottom-1 lg:bottom-20">
+                                <img id="prevArrow" src="/home/slider-arrow-left.png" alt="slider-arrow-left" class="w-[37px] h-[36px] cursor-pointer rtl:scale-x-[-1]"/>
+                                <img id="nextArrow" src="/home/slider-arrow-right.png" alt="slider-arrow-left" class="w-[37px] h-[36px] cursor-pointer rtl:scale-x-[-1]"/>
                             </div>
 
                         </div>
@@ -304,7 +310,7 @@
             Why to Chose Us
           </span>
 
-        <div class="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-12 items-start font-outfit">
+        <div class="flex flex-wrap lg:flex-nowrap gap-5 justify-around items-start font-outfit">
             <!-- card -->
             <div class="w-full xs:w-[300px] sm:w-[300px] max-w-[320px] flex flex-col justify-between items-center gap-6 sm:gap-8 text-center px-2">
                 <div class="flex flex-col items-center">
@@ -350,21 +356,21 @@
     <!-- why choose us end -->
 
     <!-- partners and clients-->
-    <section class="py-10 sm:py-12">
+    <section class="py-10 sm:py-12 ">
           <span class="block text-center font-outfit font-semibold text-[30px] sm:text-[40px] lg:text-[48px] text-[#00A1C5] mb-12 sm:mb-20">
             Partners and Clients
           </span>
-        <div class="swiper customers xl:!w-[50vw] xl:!mx-auto">
-            <div class="swiper-wrapper ">
+        <div class="swiper customers">
+            <div class="swiper-wrapper">
                 <!-- Slide -->
                 <div class="swiper-slide">
-                    <img src="/partners/478f8cdd3d2bb81e6d07bcf6d20fd12a79f3c706.jpg" alt="logo" class="!w-[120px] !h-[80px]"/>
+                    <img src="/partners/478f8cdd3d2bb81e6d07bcf6d20fd12a79f3c706.jpg" alt="logo" class="!h-[80px] block mx-auto"/>
                 </div>
-                <div class="swiper-slide"> <img src="/partners/0d3d91acb2b6f7995e5dec6b1821bec4866e89d5.png"  alt="logo" class="swiper-slide !w-[120px]  !h-[80px]"/></div>
-                <div class="swiper-slide"><img src="/partners/6192b0ef13b7874898aa650116ddb4a541cbb1f6.png"  alt="logo" class="swiper-slide !w-[120px]  !h-[80px]"/></div>
-                <div class="swiper-slide"><img src="/partners/89547677520a291de7802888f1d406632a709b03.png"  alt="logo" class="swiper-slide !w-[120px]  !h-[80px]"/></div>
-                <div class="swiper-slide"><img src="/partners/6d0c040d59cb86635ffb751fe58b545fc5a291ca.png"   alt="logo" class="swiper-slide !w-[120px]  !h-[80px]"/></div>
-                <div class="swiper-slide"><img src="/partners/478f8cdd3d2bb81e6d07bcf6d20fd12a79f3c706.jpg"  alt="logo" class="swiper-slide !w-[120px] !h-[80px]"/></div>
+                <div class="swiper-slide"> <img src="/partners/0d3d91acb2b6f7995e5dec6b1821bec4866e89d5.png"  alt="logo" class="!h-[80px] block mx-auto"/></div>
+                <div class="swiper-slide"><img src="/partners/6192b0ef13b7874898aa650116ddb4a541cbb1f6.png"  alt="logo" class="!h-[80px] block mx-auto"/></div>
+                <div class="swiper-slide"><img src="/partners/89547677520a291de7802888f1d406632a709b03.png"  alt="logo" class="!h-[80px] block mx-auto"/></div>
+                <div class="swiper-slide"><img src="/partners/6d0c040d59cb86635ffb751fe58b545fc5a291ca.png"   alt="logo" class="!h-[80px] block mx-auto"/></div>
+                <div class="swiper-slide"><img src="/partners/478f8cdd3d2bb81e6d07bcf6d20fd12a79f3c706.jpg"  alt="logo" class="!h-[80px] block mx-auto"/></div>
             </div>
         </div>
     </section>
@@ -373,15 +379,15 @@
 
 <!-- footer start -->
 <footer class="text-white relative p-8 sm:p-12 container mx-auto" style="background: radial-gradient(50% 50% at 50% 50%, #2E657A 0%, #1C5064 100%);">
-    <div class="flex j flex-col flex-wrap lg:flex-row justify-center lg:justify-evenly gap-6">
+    <div class="flex flex-col flex-wrap lg:flex-row justify-center lg:justify-evenly gap-6">
         <!-- Brand + Socials -->
-        <div class="flex flex-col items-center md:items-start justify-between relative gap-6 lg:gap-0">
+        <div class="flex flex-col items-center md:items-start justify-center relative gap-6 lg:gap-32">
             <div>
-                <img src="/logos/brand-logo.png" alt="logo" class="h-22 sm:h-22 w-auto"/>
+                <img src="/logos/brand-logo.png" alt="logo" class="h-32 sm:h-32"/>
             </div>
 
             <!-- Social icons -->
-            <div class=" flex items-center gap-4 md:gap-5 ">
+            <div class=" flex justify-center w-full gap-5">
                 <a href="#" aria-label="Facebook" class="opacity-90 hover:opacity-100 transition">
                     <img src="/icons/facebook.png"  alt="Facebook" class="h-5 sm:h-6 w-auto"/>
                 </a>
@@ -405,7 +411,6 @@
             <h3 class="text-[#FDD8AA] font-semibold">Company</h3>
             <ul class="mt-3 sm:mt-4 space-y-2 sm:space-y-3 text-[14px] sm:text-[15px]">
                 <li><a href="#" class="hover:text-[#FDD8AA]">About us</a></li>
-                <li><a href="#" class="hover:text-[#FDD8AA]">Album</a></li>
                 <li><a href="#" class="hover:text-[#FDD8AA]">Markets we serve</a></li>
             </ul>
         </nav>
