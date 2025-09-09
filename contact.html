@@ -214,7 +214,8 @@
                     <!-- Google reCAPTCHA -->
                     <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
 
-                    <button type="submit"
+                    <button type="button"
+                            onclick="showConfirmationModal()"
                             class="inline-flex items-center justify-center rounded-full px-8 py-3 font-semibold text-white bg-cyan-600 hover:bg-cyan-700 transition">
                         Send Message
                     </button>
@@ -222,6 +223,27 @@
             </form>
         </div>
     </section>
+
+
+<!--    confirmation modal-->
+    <div id="confirmation-modal" class="fixed h-screen w-screen bg-black/50 z-30 top-0 left-0 flex items-center justify-center invisible">
+
+        <div
+                class="bg-[#F7F7F7] rounded-[40px] w-fit h-fit p-4 flex flex-col justify-center items-center relative"
+        >
+        <div id="slider-modal-close" class="absolute rounded-xl top-4 right-4 z-50" onclick="closeConfirmationModal()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M18 6L6 18M6 6L18 18" stroke="#1C5064" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </div>
+
+            <img src="/icons/message.png" class="w-[283px] h-[283px]" alt="message" />
+            <p class="font-outfit p-2 lg:text-[24px] font-normal text-[#1C5064]">we have received your request successfully</p>
+
+        </div>
+    </div>
+<!--confirmation modal end-->
+
 
     <!-- footer start -->
     <footer class="text-white relative p-8 sm:p-12 container mx-auto" style="background: radial-gradient(50% 50% at 50% 50%, #2E657A 0%, #1C5064 100%);">
@@ -310,5 +332,16 @@
 </main>
 <script type="module" src="/src/main.js"></script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+    let modal = document.getElementById("confirmation-modal");
+
+    const showConfirmationModal = () => {
+        modal.classList.toggle("invisible");
+    }
+
+    const closeConfirmationModal = () => {
+        modal.classList.toggle("invisible");
+    }
+</script>
 </body>
 </html>
