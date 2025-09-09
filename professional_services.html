@@ -149,11 +149,11 @@
     <!--hero section ends here -->
 
     <section class="px-4 py-6 sm:px-6">
-        <div class="flex flex-col lg:flex-row justify-between gap-6 lg:gap-8">
+        <div class="flex flex-col lg:flex-row justify-center gap-10 ">
             <!-- LEFT -->
-            <div id="leftCard" dir="rtl" class="w-full sm:w-[420px] md:w-[464px] relative bg-white rounded-3xl shadow-[0px_4px_3.9px_2px_#0000001C] custom-scroll-bar overflow-y-scroll max-h-[60vh] md:max-h-[386px]">
-                <div dir="ltr">
-                    <ul id="serviceList" class="space-y-5 sm:space-y-6 ml-4 sm:ml-6 py-3 sm:py-4">
+            <div id="leftCard" dir="rtl" class="w-full sm:w-[420px] md:w-[464px] relative bg-white rounded-3xl shadow-[0px_4px_3.9px_2px_#0000001C] px-4  pt-13 custom-scroll-bar overflow-y-scroll max-h-[60vh] md:max-h-[386px]">
+                <div class="h-full " dir="ltr">
+                    <ul id="serviceList" class=" sm:space-y-6 ml-4 sm:ml-6">
                         <li data-target="#pane-taas" class="service-item group flex items-center gap-3 sm:gap-4 cursor-pointer min-h-[56px]">
                             <img src="/icons/services/testing-as-a-service.png" alt="testing-as-a-service" />
                             <div class="flex-1">
@@ -181,6 +181,7 @@
                                 <h3 class="font-medium text-[18px] sm:text-[19px] md:text-[20px] text-[#00A1C5]">JIRA Implementation</h3>
                             </div>
                         </li>
+
                     </ul>
                 </div>
             </div>
@@ -231,23 +232,14 @@
 
                 <!-- JIRA -->
                 <div id="pane-jira"
-                     class="pane hidden flex flex-col md:flex-row items-start gap-6 md:gap-8">
-                    <div class="flex-1 min-w-0 min-h-0">
-                        <h3 class="text-xl sm:text-[22px] md:text-2xl font-semibold text-slate-900 mb-2.5 md:mb-3">
-                            JIRA Implementation
-                        </h3>
-
-                        <p class="text-slate-600 leading-7 text-sm sm:text-base custom-scroll-bar max-h-40 md:max-h-52 overflow-y-auto pr-2 break-words">
-                            <!-- long content -->
-                            Design projects, issue types, and workflows; automate transitions; and deliver dashboards for crystal-clear visibility.
-                            <!-- ... -->
+                     class="pane hidden flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                    <div class="flex-1 custom-scroll-bar overflow-y-scroll">
+                        <h3 class="text-xl sm:text-[22px] md:text-2xl font-semibold text-slate-900 mb-2.5 md:mb-3">Jira Implementation</h3>
+                        <p class="text-slate-600 leading-7 text-sm sm:text-base">
+                            Analyze current delivery flows, define measurable KPIs, and roll out lightweight practices that raise predictability and quality.
                         </p>
-
-                        <button class="mt-5 md:mt-6 px-5 md:px-6 py-2.5 md:py-3 rounded-full bg-cyan-600 text-white hover:bg-cyan-700 transition">
-                            Request Service
-                        </button>
+                        <button class="mt-5 md:mt-6 px-5 md:px-6 py-2.5 md:py-3 rounded-full bg-cyan-600 text-white hover:bg-cyan-700 transition">Request Service</button>
                     </div>
-
                     <div class="w-full md:w-5/12 max-w-xs md:max-w-none">
                         <img class="w-full h-auto object-contain" src="/icons/services/testing.png" alt="testing-as-a-service" />
                     </div>
@@ -258,16 +250,15 @@
     </section>
 
 
-    <section class="px-10 mt-10">
+    <section class="px-10 mt-10 pb-20">
         <div class="flex items-center gap-3">
             <h2 class="font-semibold font-outfit text-[32px] text-[#1C5064]">Explore Other Services </h2>
         </div>
 
         <!-- Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 place-items-center py-9 w-full">
-
-        <!-- Card 1 -->
-            <a href="#" class="group relative block overflow-hidden rounded-2xl shadow-lg w-[338px] h-[270px]">
+        <div class="flex flex-wrap justify-center items-center gap-15 py-9">
+            <!-- Card 1 -->
+            <a href="#" class="group relative block overflow-hidden rounded-2xl shadow-lg w-[300px] h-[260px]">
                 <img
                         src="/services/professional-services-thump.jpg"
                         alt="Professional Services"
@@ -296,7 +287,7 @@
             </a>
 
             <!-- Card 2 -->
-            <a href="#" class="group relative block overflow-hidden rounded-2xl shadow-lg w-[338px] h-[270px]">
+            <a href="#" class="group relative block overflow-hidden rounded-2xl shadow-lg w-[300px] h-[260px]">
                 <img
                         src="/services/staff-augmentation-thump.jpg"
                         alt="Staff Augmentation"
@@ -322,7 +313,7 @@
             </a>
 
             <!-- Card 3 -->
-            <a href="#" class="group relative block overflow-hidden rounded-2xl shadow-lg w-[338px] h-[270px]">
+            <a href="#" class="group relative block overflow-hidden rounded-2xl shadow-lg w-[300px] h-[260px]">
                 <img
                         src="/services/training-services-thump.jpg"
                         alt="Training Services"
