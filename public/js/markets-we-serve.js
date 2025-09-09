@@ -41,8 +41,9 @@ const businessSectorsSwiper = new Swiper(".business-sectors", {
 });
 
 const customersSwiper = new Swiper(".customers", {
-    // your base options
+// your base options
     lazy: { loadOnTransitionStart: true },
+    slidesPerView: 6,
     loop: true,
     autoplay: {
         delay: 2000,
@@ -56,7 +57,8 @@ const customersSwiper = new Swiper(".customers", {
     breakpoints: {
         0:   { slidesPerView: 1 },
         640: { slidesPerView: 2 },
-        700: { slidesPerView: 3 },
-        1024:{ slidesPerView: 4 }
+        700: { slidesPerView: 4 },
+        800: { slidesPerView: 6 },
+        2000:{ slidesPerView: 6 }
     }
 });
