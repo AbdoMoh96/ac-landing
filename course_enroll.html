@@ -7,7 +7,7 @@
     <title></title>
 </head>
 <body class="bg-black">
-<main class="container mx-auto relative">
+<main class="container mx-auto relative bg-no-repeat bg-bottom-right bg-[url(/background/victor-small.png)] bg-white">
     <!--  nav starts here -->
     <nav class="navbar absolute w-full p-4 sm:p-5 flex items-center justify-between text-white z-50 text-[13px] sm:text-[14px] font-poppins font-semibold">
         <div id="brand-logo" class="shrink-0">
@@ -139,15 +139,16 @@
     <!-- nav ends here-->
 
     <!-- hero section start-->
-    <section class="h-[471px] w-full relative overflow-hidden bg-gradient-to-b from-[rgba(1,30,41,0.7)] to-[rgba(102,102,102,0)]">
-        <img class="z-[-1] absolute top-0 h-full w-full" src="/background/course-enroll-hero.jpg" alt="header-pg" />
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white font-poppins">
-            <span class="block text-center text-[48px] font-outfit font-medium text-white">Course Details</span>
+    <section class="h-[471px] w-full relative overflow-hidden">
+        <div class="absolute bg-gradient-to-b from-[rgba(1,30,41,0.7)] to-[rgba(102,102,102,0)] w-full h-full z-10 left-0 top-0"></div>
+        <img class=" absolute top-0 w-full h-full lg:h-auto " src="/background/course-enroll-hero.jpg" alt="header-pg" />
+        <div class="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white font-poppins">
+            <span class="block text-center text-[48px] font-outfit font-medium text-white">Enroll to the Course</span>
         </div>
     </section>
     <!--hero section ends here -->
 
-    <section class="px-20 py-20 bg-white">
+    <section class="px-20 py-32">
         <div class="">
 
             <!-- Right: form -->
@@ -188,9 +189,9 @@
                     <!-- Google reCAPTCHA -->
                     <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
 
-                    <button type="submit"
-                            class="inline-flex items-center justify-center rounded-full px-8 py-3 font-semibold text-white bg-cyan-600 hover:bg-cyan-700 transition">
-                        Send Message
+                    <button type="button"
+                            class="inline-flex items-center justify-center rounded-full px-8 py-3 font-semibold text-white bg-cyan-600 hover:bg-cyan-700 transition hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00A1C5]">
+                        Enroll to the Course
                     </button>
                 </div>
             </form>
