@@ -35,6 +35,7 @@ function collapse(panel) {
     panel.style.height = panel.scrollHeight + 'px';
     requestAnimationFrame(() => {
         panel.style.height = '0px';
+        panel.style.margin = '0px';
     });
 }
 
