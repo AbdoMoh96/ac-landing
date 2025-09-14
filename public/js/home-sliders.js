@@ -105,7 +105,7 @@ tabs.forEach((tab, i) => {
 const customersSwiper = new Swiper(".customers", {
     // your base options
     lazy: { loadOnTransitionStart: true },
-    slidesPerView: 6,
+    slidesPerView: 5,
     loop: true,
     autoplay: {
         delay: 2000,
@@ -120,8 +120,8 @@ const customersSwiper = new Swiper(".customers", {
         0:   { slidesPerView: 1 },
         640: { slidesPerView: 2 },
         700: { slidesPerView: 4 },
-        800: { slidesPerView: 6 },
-        2000:{ slidesPerView: 6 }
+        800: { slidesPerView: 5 },
+        2000:{ slidesPerView: 5 }
     }
 });
 
