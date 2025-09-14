@@ -582,20 +582,26 @@
 
         const setCourseCategory = (selector) => {
             const category = selector.getAttribute('data-category-selector');
+            let noCoursesFound = true;
             heighLightSelector(category);
             courses.forEach(course => {
                 let currentCategory = course.getAttribute('data-category-courses');
                 if (currentCategory === category) {
+                    noCoursesFound = false;
                     course.classList.remove('hidden');
                 }else {
                     course.classList.add('hidden');
                 }
             });
-            // if all-categories are selected view all categories
+
+            if (noCoursesFound) {
+                heighLightSelector('all-recommendations');
+                courses.forEach(course => {
+                    course.classList.remove('hidden');
+                });
+            }
         }
-
         courseSelectors.forEach(courseSelector => courseSelector.addEventListener('click', (event) => setCourseCategory(event.target)));
-
     };
 </script>
 </body>
