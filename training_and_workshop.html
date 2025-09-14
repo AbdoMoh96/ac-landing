@@ -160,13 +160,13 @@
 
     <!-- Filters -->
     <div class="flex flex-wrap justify-between mt-10 px-10 items-center gap-3 mb-8">
-        <button class="px-4 py-2 rounded-xl bg-[#F9F9F9E5] border-1 border-[#00A1C5] text-[#00A1C5]">All Recommendation</button>
-        <button class="px-4 py-2 rounded-xl bg-[#F9F9F9E5] border-1 border-[#1B1B1B1A]">Design</button>
-        <button class="px-4 py-2 rounded-xl bg-[#F9F9F9E5] border-1 border-[#1B1B1B1A]">Gaming</button>
-        <button class="px-4 py-2 rounded-xl bg-[#F9F9F9E5] border-1 border-[#1B1B1B1A]">Frontend development</button>
-        <button class="px-4 py-2 rounded-xl bg-[#F9F9F9E5] border-1 border-[#1B1B1B1A]">Mobile Programming</button>
-        <button class="px-4 py-2 rounded-xl bg-[#F9F9F9E5] border-1 border-[#1B1B1B1A]">Backend Development</button>
-        <button class="px-4 py-2 rounded-xl bg-[#F9F9F9E5] border-1 border-[#1B1B1B1A]">ART</button>
+        <button class="px-4 py-2 rounded-xl bg-[#F9F9F9E5] border-1 border-[#1B1B1B1A]" data-category-selector="all-recommendations">All Recommendation</button>
+        <button class="px-4 py-2 rounded-xl bg-[#F9F9F9E5] border-1 border-[#1B1B1B1A]" data-category-selector="design">Design</button>
+        <button class="px-4 py-2 rounded-xl bg-[#F9F9F9E5] border-1 border-[#1B1B1B1A]" data-category-selector="gaming">Gaming</button>
+        <button class="px-4 py-2 rounded-xl bg-[#F9F9F9E5] border-1 border-[#1B1B1B1A]" data-category-selector="frontend-development">Frontend development</button>
+        <button class="px-4 py-2 rounded-xl bg-[#F9F9F9E5] border-1 border-[#1B1B1B1A]" data-category-selector="mobile-programming">Mobile Programming</button>
+        <button class="px-4 py-2 rounded-xl bg-[#F9F9F9E5] border-1 border-[#1B1B1B1A]" data-category-selector="backend-development">Backend Development</button>
+        <button class="px-4 py-2 rounded-xl bg-[#F9F9F9E5] border-1 border-[#1B1B1B1A]" data-category-selector="art">ART</button>
     </div>
 
     <!-- Grid -->
@@ -560,5 +560,38 @@
 </footer>
 <!-- footer end -->
 <script type="module" src="/src/main.js"></script>
+<script>
+    window.onload = function (){
+        const courseSelectors = document.querySelectorAll('[data-category-selector]');
+        courseSelectors[0].classList.remove('border-[#1B1B1B1A]');
+        courseSelectors[0].classList.add('border-[#00A1C5]', 'text-[#00A1C5]');
+
+        const heighLightSelector = (category) => {
+            courseSelectors.forEach(courseSelector => {
+               let currentCategory = courseSelector.getAttribute('data-category-selector');
+               if (currentCategory === category) {
+                   courseSelector.classList.remove('border-[#1B1B1B1A]');
+                   courseSelector.classList.add('border-[#00A1C5]', 'text-[#00A1C5]');
+               }else {
+                   courseSelector.classList.add('border-[#1B1B1B1A]');
+                   courseSelector.classList.remove('border-[#00A1C5]', 'text-[#00A1C5]');
+               }
+            });
+        }
+
+        const setCourseCategory = (selector) => {
+            const category = selector.getAttribute('data-category-selector');
+            heighLightSelector(category);
+            // loop over courses
+            // check if the course category matches parameter category
+            // if it matches toggle hidden class
+            // if not toggle hidden class
+            // if all-categories are selected view all categories
+        }
+
+        courseSelectors.forEach(courseSelector => courseSelector.addEventListener('click', (event) => setCourseCategory(event.target)));
+
+    };
+</script>
 </body>
 </html>
