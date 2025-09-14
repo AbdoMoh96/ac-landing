@@ -172,7 +172,7 @@
     <!-- Grid -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-10 py-10">
         <!-- Card -->
-        <article class=" rounded-2xl overflow-hidden">
+        <article class=" rounded-2xl overflow-hidden" data-category-courses="art">
             <div class="relative">
                 <img class="h-40 rounded-xl w-full object-cover" src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop" alt="Course cover">
                 <div class="absolute left-3 top-3 flex gap-2">
@@ -207,7 +207,7 @@
         </article>
 
         <!-- Duplicate/variant cards below to match the layout in the  -->
-        <article class="rounded-2xl overflow-hidden">
+        <article class="rounded-2xl overflow-hidden" data-category-courses="design">
             <div class="relative">
                 <img class="rounded-xl h-40 w-full object-cover" src="https://images.unsplash.com/photo-1522199710521-72d69614c702?q=80&w=1200&auto=format&fit=crop" alt="Course cover">
                 <div class="absolute left-3 top-3 flex gap-2">
@@ -236,7 +236,7 @@
             </div>
         </article>
 
-        <article class="rounded-2xl overflow-hidden">
+        <article class="rounded-2xl overflow-hidden" data-category-courses="design">
             <div class="relative">
                 <img class="h-40 w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop" alt="Course cover">
                 <div class="absolute left-3 top-3 flex gap-2">
@@ -265,7 +265,7 @@
             </div>
         </article>
 
-        <article class=" rounded-2xl overflow-hidden">
+        <article class=" rounded-2xl overflow-hidden" data-category-courses="gaming">
             <div class="relative">
                 <img class="rounded-xl h-40 w-full object-cover" src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1200&auto=format&fit=crop" alt="Course cover">
                 <div class="absolute left-3 top-3 flex gap-2">
@@ -295,7 +295,7 @@
         </article>
 
         <!-- Row 2 variants -->
-        <article class=" rounded-2xl overflow-hidden">
+        <article class=" rounded-2xl overflow-hidden" data-category-courses="frontend-development">
             <div class="relative">
                 <img class="rounded-xl h-40 w-full object-cover" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop" alt="Course cover">
                 <div class="absolute left-3 top-3 flex gap-2">
@@ -324,7 +324,7 @@
             </div>
         </article>
 
-        <article class="rounded-2xl overflow-hidden">
+        <article class="rounded-2xl overflow-hidden" data-category-courses="mobile-development">
             <div class="relative">
                 <img class="rounded-xl h-40 w-full object-cover" src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop" alt="Course cover">
                 <div class="absolute left-3 top-3 flex gap-2">
@@ -353,7 +353,7 @@
             </div>
         </article>
 
-        <article class="rounded-2xl overflow-hidden">
+        <article class="rounded-2xl overflow-hidden" data-category-courses="backend-development">
             <div class="relative">
                 <img class="rounded-xl h-40 w-full object-cover" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Course cover">
                 <div class="absolute left-3 top-3 flex gap-2">
@@ -563,6 +563,7 @@
 <script>
     window.onload = function (){
         const courseSelectors = document.querySelectorAll('[data-category-selector]');
+        const courses = document.querySelectorAll('[data-category-courses]');
         courseSelectors[0].classList.remove('border-[#1B1B1B1A]');
         courseSelectors[0].classList.add('border-[#00A1C5]', 'text-[#00A1C5]');
 
@@ -582,10 +583,14 @@
         const setCourseCategory = (selector) => {
             const category = selector.getAttribute('data-category-selector');
             heighLightSelector(category);
-            // loop over courses
-            // check if the course category matches parameter category
-            // if it matches toggle hidden class
-            // if not toggle hidden class
+            courses.forEach(course => {
+                let currentCategory = course.getAttribute('data-category-courses');
+                if (currentCategory === category) {
+                    course.classList.remove('hidden');
+                }else {
+                    course.classList.add('hidden');
+                }
+            });
             // if all-categories are selected view all categories
         }
 
