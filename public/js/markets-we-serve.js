@@ -40,7 +40,7 @@ const businessSectorsSwiper = new Swiper(".business-sectors", {
     }
 });
 
-const customersSwiper = new Swiper(".customers", {
+const customersSwiper2 = new Swiper(".customers", {
 // your base options
     lazy: { loadOnTransitionStart: true },
     slidesPerView: 4,

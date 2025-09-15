@@ -12,9 +12,8 @@ const staffAugServicesSwiper = new Swiper(".staff-aug-services", {
 
 
 
-const slides = document.querySelectorAll('.staff-aug-services .swiper-slide');
-const panels = document.querySelectorAll('.service-panel');
-let openPanel = null;
+let slidesAug = document.querySelectorAll('.staff-aug-services .swiper-slide');
+let openPanelAug = null;
 
 function expand(panel) {
     panel.style.display = 'block';
@@ -39,7 +38,7 @@ function collapse(panel) {
     });
 }
 
-slides.forEach(slide => {
+slidesAug.forEach(slide => {
     slide.addEventListener('click', () => {
         const panelId = 'panel-' + slide.id;
         const targetPanel = document.getElementById(panelId);
@@ -48,12 +47,12 @@ slides.forEach(slide => {
 
         if (openPanel === targetPanel) {
             collapse(targetPanel);
-            openPanel = null;
+            openPanelAug = null;
             return;
         }
 
-        if (openPanel) collapse(openPanel);
+        if (openPanelAug) collapse(openPanelAug);
         expand(targetPanel);
-        openPanel = targetPanel;
+        openPanelAug = targetPanel;
     });
 });
