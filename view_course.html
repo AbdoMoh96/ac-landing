@@ -2,8 +2,14 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8" />
-    <!--    <link rel="icon" type="image/svg+xml" href="/vite.svg" />-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!--    apply on arabic only-->
+    <!--    <style>-->
+    <!--        .swiper{-->
+    <!--            direction: rtl !important;-->
+    <!--        }-->
+    <!--    </style>-->
     <title></title>
 </head>
 <body class="bg-black">
@@ -143,7 +149,7 @@
         <div class="absolute bg-gradient-to-b from-[rgba(1,30,41,0.7)] to-[rgba(102,102,102,0)] w-full h-full z-10 left-0 top-0"></div>
         <img class=" absolute top-0 h-full w-full" src="/background/training-details-hero.jpg" alt="header-pg" />
         <div class="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white font-poppins">
-            <span class="block text-center text-[48px] font-outfit font-medium text-white">Game Development with Unity</span>
+            <span class="block text-center text-[48px] font-outfit font-medium text-white">About The Course</span>
         </div>
     </section>
     <!--hero section ends here -->
@@ -225,12 +231,14 @@
                     </div>
                 </div>
 
-                <a href="./course_enroll.html" class="mt-6 inline-flex w-full items-center justify-center rounded-full bg-sky-500 px-5 py-3 font-semibold text-white hover:bg-sky-600">Apply Now</a>
+                <a href="./course_enroll.html" class="mt-6 inline-flex w-full items-center justify-center rounded-full bg-sky-500 px-5 py-3 font-semibold text-white hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00A1C5]">
+                    Enroll to the Course
+                </a>
             </div>
         </div>
 
         <!-- Related Courses -->
-        <h3 class="text-2xl font-extrabold tracking-tight text-slate-900 mt-12 mb-6">Related Courses</h3>
+        <h3 class="text-2xl font-extrabold tracking-tight mt-12 mb-6 font-semibold font-outfit text-[32px] text-[#00A1C5]">Related Courses</h3>
 
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
@@ -359,6 +367,7 @@
 
 
 </main>
+
 <!-- footer start -->
 <footer class="text-white relative p-8 sm:p-12 container mx-auto py-16" style="background: radial-gradient(50% 50% at 50% 50%, #2E657A 0%, #1C5064 100%);">
     <div class="flex flex-col flex-wrap lg:flex-row justify-center lg:justify-evenly gap-6">
@@ -392,8 +401,8 @@
         <nav>
             <h3 class="text-[#FDD8AA] font-poppins text-[18px] font-semibold">Company</h3>
             <ul class="mt-3 sm:mt-4 space-y-2 sm:space-y-3 text-[14px] sm:text-[15px]">
-                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-medium">About us</a></li>
-                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-medium">Markets we serve</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-normal">About us</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-normal">Markets we serve</a></li>
             </ul>
         </nav>
 
@@ -401,10 +410,10 @@
         <nav>
             <h3 class="text-[#FDD8AA] font-poppins text-[18px] font-semibold">Our Services</h3>
             <ul class="mt-3 sm:mt-4 space-y-2 sm:space-y-3 text-[14px] sm:text-[15px]">
-                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-medium">IT Professional Services</a></li>
-                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-medium">Consulting Services</a></li>
-                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-medium">Staff Augmentation</a></li>
-                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-medium">Training Services</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-normal">IT Professional Services</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-normal">Consulting Services</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-normal">Staff Augmentation</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-normal">Training Services</a></li>
             </ul>
         </nav>
 
@@ -412,8 +421,8 @@
         <nav>
             <h3 class="text-[#FDD8AA] font-poppins text-[18px] font-semibold">Careers</h3>
             <ul class="mt-3 sm:mt-4 space-y-2 sm:space-y-3 text-[14px] sm:text-[15px]">
-                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-medium">Vacancies</a></li>
-                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-medium">Submit your CV</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-normal">Vacancies</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-normal">Submit your CV</a></li>
             </ul>
         </nav>
 
@@ -422,13 +431,13 @@
             <h3 class="text-[#FDD8AA] font-poppins text-[18px] font-semibold">Contact Us</h3>
             <div class="flex flex-wrap gap-2 items-center my-4 sm:my-5 text-[14px] sm:text-[15px]">
                 <img src="/icons/Phone_fill.png" alt="" class="opacity-90 h-4 w-4" />
-                <a href="tel:+20224738735" class="hover:text-[#FDD8AA]  font-poppins text-[14px] font-medium">+202 24 738 735</a>
+                <a href="tel:+20224738735" class="hover:text-[#FDD8AA]  font-poppins text-[14px] font-normal">+202 24 738 735</a>
                 <span class="mx-2 opacity-70">|</span>
-                <a href="tel:+201006150319" class="hover:text-[#FDD8AA]  font-poppins text-[14px] font-medium">+201 006 150 319</a>
+                <a href="tel:+201006150319" class="hover:text-[#FDD8AA]  font-poppins text-[14px] font-normal">+201 006 150 319</a>
             </div>
             <div class="flex flex-wrap gap-2 items-center text-[14px] sm:text-[15px]">
                 <img src="/icons/Mail.png" alt="" class="opacity-90 h-4 w-4" />
-                <a href="mailto:info@arabcalibers.com" class="hover:text-[#FDD8AA]  font-poppins text-[14px] font-medium">info@arabcalibers.com</a>
+                <a href="mailto:info@arabcalibers.com" class="hover:text-[#FDD8AA]  font-poppins text-[14px] font-normal">info@arabcalibers.com</a>
             </div>
         </div>
     </div>
@@ -443,6 +452,18 @@
     <img class="absolute bottom-0 ltr:right-0 rtl:left-0 rtl:scale-x-[-1] w-[250px]" src="/background/footer-pg.png" alt="pg" />
 </footer>
 <!-- footer end -->
+
 <script type="module" src="/src/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="/js/home-sliders.js"></script>
+<script src="/js/album.js"></script>
+<script src="/js/consultancy_services.js"></script>
+<script src="/js/confirmation-modal.js"></script>
+<script src="/js/markets-we-serve.js"></script>
+<script src="/js/professional_services.js"></script>
+<script src="/js/staff-aug.js"></script>
+<script src="/js/training-and-workshop.js"></script>
+<script src="/js/vacancies.js"></script>
 </body>
 </html>

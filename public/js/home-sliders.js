@@ -2,6 +2,15 @@ const sliderNav = document.querySelector('.slider-nav');
 
 const sliderNavElements = [...sliderNav.getElementsByTagName('span')];
 
+document.addEventListener("DOMContentLoaded", function () {
+    const nav = document.querySelector("nav.navbar");
+
+    if (nav) {
+        nav.className =
+            "navbar absolute w-full p-4 sm:p-5 flex items-center justify-between text-white bg-gradient-to-b from-black to-[#66666600] z-50 text-[13px] sm:text-[14px] font-poppins font-semibold";
+    }
+});
+
 
 const sliderNavUnderLine = (el) => {
   const selectedElement = el.target.innerHTML;
@@ -23,7 +32,7 @@ sliderNavElements.forEach(el => {
     el.addEventListener('click', sliderNavUnderLine);
 });
 
-const swiper = new Swiper('.about-swiper', {
+const swiperAbout = new Swiper('.about-swiper', {
     slidesPerView: 1,
     spaceBetween: 0,
     fadeEffect: { crossFade: true },
@@ -93,11 +102,11 @@ tabs.forEach((tab, i) => {
     tab.setAttribute('role', 'button');
     tab.setAttribute('tabindex', '0');
     tab.dataset.index = i;
-    tab.addEventListener('click', () => swiper.slideTo(i));
+    tab.addEventListener('click', () => swiperAbout.slideTo(i));
     tab.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            swiper.slideTo(i);
+            swiperAbout.slideTo(i);
         }
     });
 });
@@ -105,7 +114,7 @@ tabs.forEach((tab, i) => {
 const customersSwiper = new Swiper(".customers", {
     // your base options
     lazy: { loadOnTransitionStart: true },
-    slidesPerView: 6,
+    slidesPerView: 5,
     loop: true,
     autoplay: {
         delay: 2000,
@@ -120,8 +129,8 @@ const customersSwiper = new Swiper(".customers", {
         0:   { slidesPerView: 1 },
         640: { slidesPerView: 2 },
         700: { slidesPerView: 4 },
-        800: { slidesPerView: 6 },
-        2000:{ slidesPerView: 6 }
+        800: { slidesPerView: 5 },
+        2000:{ slidesPerView: 5 }
     }
 });
 

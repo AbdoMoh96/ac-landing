@@ -2,8 +2,14 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8" />
-    <!--    <link rel="icon" type="image/svg+xml" href="/vite.svg" />-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!--    apply on arabic only-->
+    <!--    <style>-->
+    <!--        .swiper{-->
+    <!--            direction: rtl !important;-->
+    <!--        }-->
+    <!--    </style>-->
     <title></title>
 </head>
 <body class="bg-black">
@@ -148,19 +154,17 @@
     </section>
     <!--hero section ends here -->
 
-    <header class="relative overflow-hidden bg-white mx-4 lg:px-20 px-5">
-        <diVacanciesv class="px-4 pt-14">
+    <header class="lg:px-20 py-16 px-5">
             <h1 class="font-outfit font-semibold text-[32px] text-[#00A1C5]">Vacancies</h1>
             <p class="mt-2 font-outfit font-normal text-[20px] text-[#1C5064]">
                 Choosing the right employee is crucial to building a business, so we’re always looking for those with the ability to be a major contributor to our success. If the job’s requirements match your skills and expertise, we are looking for you.
             </p>
-        </diVacanciesv>
     </header>
 
     <section class="lg:px-20 py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20 px-5">
 
         <!-- Left rail: roles list -->
-        <section id="roles-container" class="lg:col-span-5 space-y-5 max-h-[150vh] overflow-y-auto pr-2">
+        <section id="roles-container" class="lg:col-span-5 space-y-5 max-h-[120vh] xl:max-h-[85vh] overflow-y-auto pr-2">
             <!-- Role card -->
             <article class="rounded-2xl p-5 border "  data-role-id="full-stack">
                 <h3 class="font-semibold text-brand-800  text-justify">Full Stack Developer</h3>
@@ -221,6 +225,8 @@
                     Primary Responsibility: Designing and implementing UIs using HTML, CSS, and JavaScript frameworks like React or Angular. Building and maintaining server‑side logic, databases…
                 </p>
             </article>
+
+
         </section>
 
         <!-- Right: highlighted role -->
@@ -326,26 +332,26 @@
                 <div class="grid md:grid-cols-3 gap-6 items-end">
                     <!-- Name -->
                     <label class="md:col-span-1 block flex flex-col justify-between h-full">
-                        <span class="block text-sm font-medium text-slate-700">Name</span>
+                        <span class="block font-poppins font-normal text-[12px] text-[#8D8D8D]">Name</span>
                         <input type="text" name="name" required
                                class="mt-2 w-full underline-input focus:outline-none" placeholder="Your full name" />
                     </label>
 
                     <!-- File upload -->
                     <div class="md:col-span-1 flex flex-col justify-between h-full">
-                        <span class="block text-sm font-medium text-slate-700">Resume (DOC or PDF)</span>
+                        <span class="block font-poppins font-normal text-[12px] text-[#8D8D8D]">Resume (DOC or PDF)</span>
                         <label for="resume" class="mt-2 block border-2 border-dashed border-slate-300 rounded-xl p-4 text-center hover:border-brand-400 cursor-pointer">
                             <input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx" class="hidden" />
                             <div class="flex items-center justify-center gap-3">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v-9A2.5 2.5 0 0 1 5.5 5h6.879a2.5 2.5 0 0 1 1.768.732l4.121 4.121a2.5 2.5 0 0 1 .732 1.768V18.5A2.5 2.5 0 0 1 16.5 21h-11A2.5 2.5 0 0 1 3 18.5z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 5.25V9a.75.75 0 0 0 .75.75h3.75"/></svg>
-                                <span class="text-sm text-slate-600">Select file or drag & drop here</span>
+                                <span class="font-poppins font-normal text-[12px] text-[#8D8D8D]">Select file or drag & drop here</span>
                             </div>
                         </label>
                     </div>
 
                     <!-- reCAPTCHA -->
                     <div class="md:col-span-1 relative flex flex-col justify-between h-full">
-                        <span class="block text-sm font-medium text-slate-700">Verification</span>
+                        <span class="block font-poppins font-normal text-[12px] text-[#8D8D8D]">Verification</span>
                         <div class="mt-2">
                             <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
                         </div>
@@ -363,6 +369,7 @@
 
 
 </main>
+
 <!-- footer start -->
 <footer class="text-white relative p-8 sm:p-12 container mx-auto py-16" style="background: radial-gradient(50% 50% at 50% 50%, #2E657A 0%, #1C5064 100%);">
     <div class="flex flex-col flex-wrap lg:flex-row justify-center lg:justify-evenly gap-6">
@@ -396,8 +403,8 @@
         <nav>
             <h3 class="text-[#FDD8AA] font-poppins text-[18px] font-semibold">Company</h3>
             <ul class="mt-3 sm:mt-4 space-y-2 sm:space-y-3 text-[14px] sm:text-[15px]">
-                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-medium">About us</a></li>
-                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-medium">Markets we serve</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-normal">About us</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-normal">Markets we serve</a></li>
             </ul>
         </nav>
 
@@ -405,10 +412,10 @@
         <nav>
             <h3 class="text-[#FDD8AA] font-poppins text-[18px] font-semibold">Our Services</h3>
             <ul class="mt-3 sm:mt-4 space-y-2 sm:space-y-3 text-[14px] sm:text-[15px]">
-                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-medium">IT Professional Services</a></li>
-                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-medium">Consulting Services</a></li>
-                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-medium">Staff Augmentation</a></li>
-                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-medium">Training Services</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-normal">IT Professional Services</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-normal">Consulting Services</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-normal">Staff Augmentation</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-normal">Training Services</a></li>
             </ul>
         </nav>
 
@@ -416,8 +423,8 @@
         <nav>
             <h3 class="text-[#FDD8AA] font-poppins text-[18px] font-semibold">Careers</h3>
             <ul class="mt-3 sm:mt-4 space-y-2 sm:space-y-3 text-[14px] sm:text-[15px]">
-                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-medium">Vacancies</a></li>
-                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-medium">Submit your CV</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-normal">Vacancies</a></li>
+                <li><a href="#" class="hover:text-[#FDD8AA] font-poppins text-[14px] font-normal">Submit your CV</a></li>
             </ul>
         </nav>
 
@@ -426,13 +433,13 @@
             <h3 class="text-[#FDD8AA] font-poppins text-[18px] font-semibold">Contact Us</h3>
             <div class="flex flex-wrap gap-2 items-center my-4 sm:my-5 text-[14px] sm:text-[15px]">
                 <img src="/icons/Phone_fill.png" alt="" class="opacity-90 h-4 w-4" />
-                <a href="tel:+20224738735" class="hover:text-[#FDD8AA]  font-poppins text-[14px] font-medium">+202 24 738 735</a>
+                <a href="tel:+20224738735" class="hover:text-[#FDD8AA]  font-poppins text-[14px] font-normal">+202 24 738 735</a>
                 <span class="mx-2 opacity-70">|</span>
-                <a href="tel:+201006150319" class="hover:text-[#FDD8AA]  font-poppins text-[14px] font-medium">+201 006 150 319</a>
+                <a href="tel:+201006150319" class="hover:text-[#FDD8AA]  font-poppins text-[14px] font-normal">+201 006 150 319</a>
             </div>
             <div class="flex flex-wrap gap-2 items-center text-[14px] sm:text-[15px]">
                 <img src="/icons/Mail.png" alt="" class="opacity-90 h-4 w-4" />
-                <a href="mailto:info@arabcalibers.com" class="hover:text-[#FDD8AA]  font-poppins text-[14px] font-medium">info@arabcalibers.com</a>
+                <a href="mailto:info@arabcalibers.com" class="hover:text-[#FDD8AA]  font-poppins text-[14px] font-normal">info@arabcalibers.com</a>
             </div>
         </div>
     </div>
@@ -447,145 +454,18 @@
     <img class="absolute bottom-0 ltr:right-0 rtl:left-0 rtl:scale-x-[-1] w-[250px]" src="/background/footer-pg.png" alt="pg" />
 </footer>
 <!-- footer end -->
+
 <script type="module" src="/src/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script>
-    // ===== Careers Role Switcher =====
-    const applyForm = document.querySelector('#apply');
-
-
-    const showApplyForm = () => {
-        applyForm.classList.remove('hidden');
-    };
-
-    const hideApplyForm = () => {
-        applyForm.classList.add('hidden');
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const rolesContainer = document.querySelector('#roles-container');
-        if (!rolesContainer) return;
-
-        const roleCards = Array.from(rolesContainer.querySelectorAll('[data-role-id]'));
-        const rolePanels = Array.from(document.querySelectorAll('[data-role-panel]'));
-        let currentId = null;
-        let isAnimating = false;
-        const getPanel = (id) => rolePanels.find(p => p.getAttribute('data-role-panel') === id);
-        const fadeOutPanel = (panel) => new Promise((resolve) => {
-            hideApplyForm();
-            if (!panel) return resolve();
-            if (panel.classList.contains('invisible')) return resolve();
-
-            const onEnd = (e) => {
-                if (e.propertyName !== 'opacity' && e.propertyName !== 'max-height') return;
-                panel.removeEventListener('transitionend', onEnd);
-
-                panel.classList.add('invisible', 'pointer-events-none', '!p-0', 'max-h-0');
-                panel.setAttribute('aria-hidden', 'true');
-                resolve();
-            };
-            panel.addEventListener('transitionend', onEnd);
-            panel.style.maxHeight = panel.scrollHeight + 'px'; // set current height
-            requestAnimationFrame(() => {
-                panel.classList.add('opacity-0');
-                panel.style.maxHeight = '0px';
-            });
-        });
-
-        const fadeInPanel = (panel) => new Promise((resolve) => {
-            if (!panel) return resolve();
-
-            const onEnd = (e) => {
-                if (e.propertyName !== 'opacity' && e.propertyName !== 'max-height') return;
-                panel.removeEventListener('transitionend', onEnd);
-
-                panel.style.maxHeight = ''; // clear inline style so it auto-sizes
-                resolve();
-            };
-
-            panel.classList.remove('invisible', 'pointer-events-none', '!p-0', 'max-h-0');
-            panel.setAttribute('aria-hidden', 'false');
-            panel.style.maxHeight = '0px';
-
-            requestAnimationFrame(() => {
-                panel.addEventListener('transitionend', onEnd);
-                panel.classList.remove('opacity-0');
-                panel.style.maxHeight = panel.scrollHeight + 'px';
-            });
-        });
-
-        const setSelectedCard = (id) => {
-            roleCards.forEach(card => {
-                const isActive = card.getAttribute('data-role-id') === id;
-
-                card.classList.toggle('border', isActive);
-                card.classList.toggle('border-[#1797C5]', isActive);
-
-                // update heading colors
-                const heading = card.querySelector('h3');
-                if (heading) {
-                    heading.classList.toggle('text-brand-800', isActive);
-                    heading.classList.toggle('text-[#1797C5]', isActive);
-                    heading.classList.toggle('text-slate-800', !isActive);
-                }
-
-                card.querySelectorAll('span').forEach(span => {
-                    span.classList.toggle('text-slate-700', isActive);
-                });
-
-                card.setAttribute('aria-selected', String(isActive));
-                card.tabIndex = isActive ? 0 : -1;
-            });
-        };
-
-        const switchTo = async (id) => {
-            if (isAnimating || id === currentId) return;
-            isAnimating = true;
-
-            const nextPanel = getPanel(id);
-            const currentPanel = getPanel(currentId);
-
-            await fadeOutPanel(currentPanel);
-            await fadeInPanel(nextPanel);
-
-            currentId = id;
-            setSelectedCard(id);
-            isAnimating = false;
-        };
-
-        rolesContainer.addEventListener('click', (e) => {
-            const card = e.target.closest('[data-role-id]');
-            if (!card || !rolesContainer.contains(card)) return;
-            switchTo(card.getAttribute('data-role-id'));
-        });
-
-        rolesContainer.addEventListener('keydown', (e) => {
-            if (e.key !== 'Enter' && e.key !== ' ') return;
-            const card = e.target.closest('[data-role-id]');
-            if (!card) return;
-            e.preventDefault();
-            switchTo(card.getAttribute('data-role-id'));
-        });
-
-        roleCards.forEach(card => {
-            if (!card.hasAttribute('tabindex')) card.tabIndex = 0;
-            card.setAttribute('role', 'button');
-            card.setAttribute('aria-pressed', 'false');
-        });
-
-        if (roleCards.length) {
-            const firstId = roleCards[0].getAttribute('data-role-id');
-            // Immediately show the first panel without animation flicker
-            const firstPanel = getPanel(firstId);
-            if (firstPanel) {
-                firstPanel.classList.remove('invisible', 'pointer-events-none', 'opacity-0', 'max-h-0');
-                firstPanel.setAttribute('aria-hidden', 'false');
-                currentId = firstId;
-                setSelectedCard(firstId);
-            }
-        }
-    });
-
-</script>
+<script src="/js/home-sliders.js"></script>
+<script src="/js/album.js"></script>
+<script src="/js/consultancy_services.js"></script>
+<script src="/js/confirmation-modal.js"></script>
+<script src="/js/markets-we-serve.js"></script>
+<script src="/js/professional_services.js"></script>
+<script src="/js/staff-aug.js"></script>
+<script src="/js/training-and-workshop.js"></script>
+<script src="/js/vacancies.js"></script>
 </body>
 </html>
