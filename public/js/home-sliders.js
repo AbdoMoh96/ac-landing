@@ -32,7 +32,7 @@ sliderNavElements.forEach(el => {
     el.addEventListener('click', sliderNavUnderLine);
 });
 
-const swiper = new Swiper('.about-swiper', {
+const swiperAbout = new Swiper('.about-swiper', {
     slidesPerView: 1,
     spaceBetween: 0,
     fadeEffect: { crossFade: true },
@@ -102,11 +102,11 @@ tabs.forEach((tab, i) => {
     tab.setAttribute('role', 'button');
     tab.setAttribute('tabindex', '0');
     tab.dataset.index = i;
-    tab.addEventListener('click', () => swiper.slideTo(i));
+    tab.addEventListener('click', () => swiperAbout.slideTo(i));
     tab.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            swiper.slideTo(i);
+            swiperAbout.slideTo(i);
         }
     });
 });
