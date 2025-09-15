@@ -2,6 +2,15 @@ const sliderNav = document.querySelector('.slider-nav');
 
 const sliderNavElements = [...sliderNav.getElementsByTagName('span')];
 
+document.addEventListener("DOMContentLoaded", function () {
+    const nav = document.querySelector("nav.navbar");
+
+    if (nav) {
+        nav.className =
+            "navbar absolute w-full p-4 sm:p-5 flex items-center justify-between text-white bg-gradient-to-b from-black to-[#66666600] z-50 text-[13px] sm:text-[14px] font-poppins font-semibold";
+    }
+});
+
 
 const sliderNavUnderLine = (el) => {
   const selectedElement = el.target.innerHTML;
