@@ -45,7 +45,7 @@ slidesAug.forEach(slide => {
 
         if (!targetPanel) return;
 
-        if (openPanel === targetPanel) {
+        if (openPanelAug === targetPanel) {
             collapse(targetPanel);
             openPanelAug = null;
             return;
